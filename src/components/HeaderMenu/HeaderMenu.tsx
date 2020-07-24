@@ -1,28 +1,31 @@
 import * as React from 'react';
+import { NavLink } from 'react-router-dom';
 
-export interface IHeaderMenu {}
+export interface IHeaderMenu {
+  url?: string;
+  linksList: TLink[];
+}
+type TLink = {
+  name: string;
+  link: string;
+};
+const HeaderMenu: React.FC<IHeaderMenu> = (props) => {
+  const { url, linksList } = props;
 
-const HeaderMenu: React.FC<IHeaderMenu> = () => {
   return (
     <div id='menu' className='header__menu'>
-      <div className='header__menu__point active' data-id='5'>
-        Главная
-      </div>
-      <div className='header__menu__point' data-id='1'>
-        Потребности
-      </div>
-      <div className='header__menu__point' data-id='2'>
-        Позиции
-      </div>
-      <div className='header__menu__point' data-id='3'>
-        Заявки
-      </div>
-      <div className='header__menu__point' data-id='4'>
-        Наименования
-      </div>
-      <div className='header__menu__point' data-id='6'>
-        Склад
-      </div>
+      {linksList.map((_link: TLink, _index: number) => (
+        <NavLink
+          exact
+          to={`${url || ''}/${_link.link}`}
+          className='header__menu__point'
+          activeClassName='active'
+          data-id={`${_index}`}
+          key={_index}
+        >
+          {_link.name}
+        </NavLink>
+      ))}
     </div>
   );
 };

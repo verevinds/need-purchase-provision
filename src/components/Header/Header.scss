@@ -32,9 +32,10 @@
       padding: 0 22px 0;
 
       cursor: pointer;
+      text-decoration: none;
 
       color: #e8eff7;
-      &.active {
+      &.active, &:hover {
         background: #537299;
       }
     }
