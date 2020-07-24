@@ -1,38 +1,19 @@
 import * as React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import Header from './components/Header/Header';
+import MainPage from './pages/MainPage';
 
 const App = () => {
   return (
-    <div id='body'>
-      <div id='header'>
-        <a id='logo' href='http://www.c31.nccp.ru/'>
-          <img src='//api.nccp-eng.ru/images/logo2.png' />
-        </a>
+    <BrowserRouter>
+      <Header />
 
-        <div id='menu'>
-          <div className='point' data-id='5'>
-            Главная
-          </div>
-          <div className='point' data-id='1'>
-            Потребности
-          </div>
-          <div className='point' data-id='2'>
-            Позиции
-          </div>
-          <div className='point' data-id='3'>
-            Заявки
-          </div>
-          <div className='point' data-id='4'>
-            Наименования
-          </div>
-          <div className='point' data-id='6'>
-            Склад
-          </div>
-        </div>
-        <div id='user'></div>
-      </div>
-
-      <div id='content'></div>
-    </div>
+      <Switch>
+        <Route exact path='/' component={MainPage} />
+        <Route path='/needs/:id' component={MainPage} />
+      </Switch>
+    </BrowserRouter>
   );
 };
 
