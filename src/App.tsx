@@ -27,7 +27,7 @@ const App = () => {
       })
       .then((res) => {
         if (res.data) {
-          cookies.set('auth', res.data, { path: '/' });
+          cookies.set('login', res.data, { path: '/' });
         }
       })
       .catch((err) => {

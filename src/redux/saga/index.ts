@@ -6,6 +6,7 @@ import queryApiAsync from './queryApiAsync';
 function* watchFetch() {
   const { QUERY_API } = constants;
 
+  // @ts-ignore
   yield takeEvery(QUERY_API, queryApiAsync);
 }
 

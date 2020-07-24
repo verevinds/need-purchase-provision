@@ -1,0 +1,40 @@
+import constants from '../constants';
+
+const { POSITIONS_REQUEST_SUCCESSED, POSITIONS_UPDATE } = constants;
+
+const initialState = {
+  list: [],
+  isUpdate: false,
+  isLoading: false,
+};
+
+export type TPosition = {
+  id: number;
+  level: number;
+  parent: number | null;
+  name: string;
+  updatedAt: string;
+  createdAt: string;
+};
+
+const positionReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case POSITIONS_REQUEST_SUCCESSED:
+      return {
+        ...state,
+        list: action.data,
+        isUpdate: false,
+        isLoading: true,
+      };
+    case POSITIONS_UPDATE:
+      return {
+        ...state,
+        isUpdate: true,
+        isLoading: false,
+      };
+    default:
+      return state;
+  }
+};
+
+export default positionReducer;

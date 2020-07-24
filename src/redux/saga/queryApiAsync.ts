@@ -1,5 +1,5 @@
 import { put, call } from 'redux-saga/effects';
-import * as axios from 'axios';
+import axios from 'axios';
 
 function* queryApiAsync({ route, actionSuccessed, actionUpdate, method, data = {}, id, params }) {
   try {
