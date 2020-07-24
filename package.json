@@ -2,7 +2,7 @@
   "name": "pzo",
   "version": "1.0.0",
   "description": "Need Purchase Provision",
-  "main": "index.html",
+  "main": "./public/index.html",
   "scripts": {
     "start": "parcel ./public/index.html"
   },
