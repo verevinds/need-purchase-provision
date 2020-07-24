@@ -1,0 +1,19 @@
+{
+  "name": "pzo",
+  "version": "1.0.0",
+  "description": "Need Purchase Provision",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript",
+    "react"
+  ],
+  "author": "Verevin S. Denis <verevinds@yandex.ru>",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
