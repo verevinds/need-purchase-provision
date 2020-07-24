@@ -22,7 +22,7 @@
 
 ## :scroll: Скрипты
 
-### :straight_ruler: Разработка
+### :straight_ruler: Запуск для разработки
 
 ```cmd
   npm run start
