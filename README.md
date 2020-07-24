@@ -5,7 +5,7 @@
 1. [:package: Установка](#package-установка)
 2. [:scroll: Скрипты](#scroll-скрипты)
    1. [:straight_ruler: Запуск для разработки](#straight_ruler-запуск-для-разработки)
-   2. [### :dollar: Продакшен](#dollar-продакшен)
+   2. [:dollar: Продакшен](#dollar-продакшен)
 
 ## :package: Установка
 
