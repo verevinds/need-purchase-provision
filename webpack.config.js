@@ -101,6 +101,8 @@ module.exports = {
   devServer: {
     port: 4200,
     hot: isDev,
+    historyApiFallback: true,
+    compress: true,
   },
   devtool: isDev ? 'source-map' : '',
   plugins: pluginsBase(),
