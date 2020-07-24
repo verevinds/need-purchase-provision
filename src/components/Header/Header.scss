@@ -1,0 +1,50 @@
+.header {
+  position: relative;
+
+  width: 100%;
+  height: 40px;
+
+  background: #597ba5;
+  &__logo {
+    position: absolute;
+    top: 5px;
+    left: 8px;
+
+    padding: 0 5px;
+
+    cursor: pointer;
+    img {
+      width: 220px;
+    }
+  }
+  &__menu {
+    position: absolute;
+    left: 270px;
+    &__point {
+      font-size: 11px;
+      font-weight: bold;
+      line-height: 40px;
+
+      display: table;
+      float: left;
+
+      height: 40px;
+      padding: 0 22px 0;
+
+      cursor: pointer;
+
+      color: #e8eff7;
+      &.active {
+        background: #537299;
+      }
+    }
+  }
+  &__user {
+    line-height: 40px;
+
+    position: absolute;
+    right: 0;
+
+    width: 300px;
+  }
+}
