@@ -30,7 +30,14 @@
   "extends": ["airbnb", "airbnb/hooks", "prettier", "plugin:react/recommended"],
   "plugins": ["prettier", "react", "@typescript-eslint"],
   "rules": {
-    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
+    "no-restricted-imports": ["error", { "paths": [{ "name": "foo", "importNames": ["DisallowedObject"] }] }],
+    "import/resolver": {
+      "typescript": {}
+    },
+    "import/no-unresolved": [2, { "caseSensitive": false }],
+    "no-lone-blocks": "error",
+    "no-unused-vars": "warn",
     "react/prop-types": 0,
     "comma-dangle": 0,
     "no-restricted-syntax": 1,
@@ -39,9 +46,7 @@
     "no-underscore-dangle": 1,
     "global-require": 1,
     "react/no-multi-comp": 1,
-    "react/jsx-filename-extension": 0,
     "camelcase": 1,
-    "import/no-unresolved": 1,
     "import/prefer-default-export": 1,
     "import/extensions": 0,
     "no-return-assign": 1,
