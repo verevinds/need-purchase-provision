@@ -91,6 +91,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
+    alias: {
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@redux': path.resolve(__dirname, 'src/redux'),
+    },
     extensions: ['.ts', '.tsx', '.js'],
   },
   optimization: optimization(),

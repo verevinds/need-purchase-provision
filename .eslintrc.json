@@ -7,14 +7,24 @@
       "jsx": true // Allows for the parsing of JSX
     }
   },
+  "globals": {
+    "document": false
+  },
   "settings": {
     "react": {
       "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+    },
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
     }
   },
   "extends": [
     "airbnb-base",
-    "prettier"
+    "prettier",
+    "plugin:react/recommended"
     // "eslint:recommended",
     // "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
     // "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
@@ -23,6 +33,8 @@
   ],
   "plugins": ["prettier"],
   "rules": {
-    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
+    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+
+    "import/extensions": "off"
   }
 }
