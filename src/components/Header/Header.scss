@@ -47,5 +47,34 @@
     right: 0;
 
     width: 300px;
+    &__img {
+      position: relative;
+
+      float: right;
+
+      width: 35px;
+      height: 35px;
+      margin: 2px;
+
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      background-color: #e2e1df;
+      background-size: cover;
+    }
+    &__name {
+      font-size: 11px;
+
+      position: relative;
+
+      display: table;
+      float: right;
+
+      margin-right: 10px;
+
+      text-align: right;
+
+      color: #e8eff7;
+    }
   }
 }
