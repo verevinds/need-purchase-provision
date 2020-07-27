@@ -17,10 +17,10 @@ const Header: React.FC<IHeader> = () => {
   ];
   return (
     <div id='header' className='header'>
-      <HeaderLogo />
-
-      <HeaderMenu linksList={linksList} />
-
+      <div className='header_spinner'>
+        <HeaderLogo />
+        <HeaderMenu linksList={linksList} />
+      </div>
       <HeaderUser />
     </div>
   );
