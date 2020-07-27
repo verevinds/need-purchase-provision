@@ -1,0 +1,29 @@
+.submenu {
+  margin: 13px;
+  &__point {
+    font-size: 8pt;
+    font-weight: bold;
+
+    display: table;
+    float: left;
+
+    margin-right: 10px;
+    padding: 3px 7px 4px;
+
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+
+    color: #45688e;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    &_active {
+      cursor: default;
+
+      color: #fff;
+      background: #6588ab;
+    }
+  }
+}
