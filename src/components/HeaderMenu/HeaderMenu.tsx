@@ -22,7 +22,6 @@ const HeaderMenu: React.FC<IHeaderMenu> = (props) => {
       <div className='header__menu_inline'>
         {linksList.map((_link: TLink, _index: number) => (
           <NavLink
-            exact
             to={`${url || ''}/${_link.link}`}
             className='header__menu__point'
             activeClassName='active'
