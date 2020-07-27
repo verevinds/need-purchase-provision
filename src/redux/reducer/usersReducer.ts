@@ -51,7 +51,7 @@ const initialState: IUsers = {
   isUpdate: true,
 };
 
-const usersReducer = (state: IUsers = initialState, action: IUsersCurrentRequestSeccessed): IUsers => {
+const usersReducer = (state = initialState, action: IUsersCurrentRequestSeccessed) => {
   switch (action.type) {
     case USERS_REQUEST_SUCCESSED:
       return {
