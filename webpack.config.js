@@ -89,13 +89,14 @@ module.exports = {
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   resolve: {
     alias: {
       '@components': path.resolve(__dirname, 'src/components'),
       '@redux': path.resolve(__dirname, 'src/redux'),
     },
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.ts', '.tsx', 'jsx', '.js'],
   },
   optimization: optimization(),
   devServer: {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Redirect, BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Cookies from 'universal-cookie';
 import Axios from 'axios';
@@ -14,6 +14,8 @@ import StockPage from './pages/StockPage';
 import { queryApi } from './redux/actionCreators/queryApiAction';
 import { authRequestSuccessed } from './redux/actionCreators/authAction';
 import { IState } from './redux/reducer';
+import Filter from './components/Filter/Filter';
+import Statistics from './layout/MainPage/Statistics';
 
 const App = () => {
   const cookies = new Cookies();
@@ -51,20 +53,20 @@ const App = () => {
   React.useEffect(() => {
     console.log(user);
   }, [user]);
+
   return (
     <BrowserRouter>
       <Header />
-
+      <Filter />
       <Switch>
+        <Redirect exact from='/' to='/main' />
         <Route exact path='/needs' component={NeedsPage} />
         <Route exact path='/positions' component={PositionsPage} />
         <Route exact path='/claims' component={ClaimsPage} />
         <Route exact path='/nominations' component={NominationPage} />
         <Route exact path='/stock' component={StockPage} />
 
-        <Route exact path='/' component={MainPage} />
         <Route path='/main' component={MainPage} />
-        <Route path='/main/:id' component={MainPage} />
       </Switch>
     </BrowserRouter>
   );
