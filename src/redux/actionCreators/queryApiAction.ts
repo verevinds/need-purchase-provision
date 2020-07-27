@@ -4,7 +4,12 @@ const { QUERY_API } = constants;
 
 export interface IQueryApi {
   route?: string;
-  actionSuccessed?: (type: string, data: any) => void;
+  actionSuccessed?: (
+    data: any,
+  ) => {
+    type: string;
+    data: any;
+  };
   actionUpdate?: (type: string, data: any) => void;
   method?: string;
   data?: any;

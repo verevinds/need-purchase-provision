@@ -5,7 +5,7 @@ function* queryApiAsync({ route, actionSuccessed, actionUpdate, method, data = {
   try {
     let response;
 
-    const URL = ``;
+    const URL = `http://srv-sdesk.c31.nccp.ru:8080`;
     if (params) {
       Object.assign(data, { params });
     }
@@ -30,7 +30,19 @@ function* queryApiAsync({ route, actionSuccessed, actionUpdate, method, data = {
         response = yield call(() => axios.put(`${URL}/api/${route}${id ? `/${id}` : ''}`, data));
 
         break;
-
+      // fetch("http://srv-sdesk.c31.nccp.ru:8080/api/users/", {
+      //   "headers": {
+      //     "accept": "*/*",
+      //     "accept-language": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7",
+      //     "if-none-match": "W/\"72c28-j/y1USBZ/6xjcvptDe3iu2pu7Z0\""
+      //   },
+      //   "referrer": "http://localhost:4200/",
+      //   "referrerPolicy": "no-referrer-when-downgrade",
+      //   "body": null,
+      //   "method": "GET",
+      //   "mode": "cors",
+      //   "credentials": "omit"
+      // });
       default:
         response = yield call(() => axios.get(`${URL}/api/${route}/${id || ''}`, data));
         break;
