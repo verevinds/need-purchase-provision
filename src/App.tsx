@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import Cookies from 'universal-cookie';
 import Axios from 'axios';
 
@@ -10,9 +11,14 @@ import NeedsPage from './pages/NeedsPage';
 import NominationPage from './pages/NominationPage';
 import PositionsPage from './pages/PositionsPage';
 import StockPage from './pages/StockPage';
+import { queryApi } from './redux/actionCreators/queryApiAction';
+import { authRequestSuccessed } from './redux/actionCreators/authAction';
+import { IState } from './redux/reducer';
 
 const App = () => {
   const cookies = new Cookies();
+  const dispatch = useDispatch();
+  const user = useSelector((state: IState) => state.auth.user);
 
   React.useLayoutEffect(() => {
     Axios.get(`${window.location.protocol}//api.nccp-eng.ru/?method=auth.start`, {
@@ -28,13 +34,23 @@ const App = () => {
       .then((res) => {
         if (res.data) {
           cookies.set('login', res.data, { path: '/' });
+          dispatch(
+            queryApi({
+              route: 'users',
+              actionSuccessed: authRequestSuccessed,
+              id: res.data.number,
+            }),
+          );
         }
       })
       .catch((err) => {
         console.error(err);
       });
-  }, [cookies]);
+  }, []);
 
+  React.useEffect(() => {
+    console.log(user);
+  }, [user]);
   return (
     <BrowserRouter>
       <Header />
