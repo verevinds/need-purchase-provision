@@ -8,6 +8,7 @@ export interface IHeaderMenu {
 }
 export type TLink = {
   name: string;
+  url?: string;
   link: string;
 };
 const HeaderMenu: React.FC<IHeaderMenu> = (props) => {
