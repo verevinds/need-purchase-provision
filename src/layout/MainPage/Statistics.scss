@@ -1,5 +1,49 @@
 .statistics {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  &__title {
+    font-size: 12px;
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    width: 100%;
+    margin-bottom: 10px;
+
+    text-align: center;
+
+    color: #4a688e;
+    & select {
+      width: 135px;
+      margin: 0 10px;
+
+      cursor: pointer;
+
+      color: #4a688e;
+      border: 0;
+      border-bottom: 1px dotted #597ba5;
+      outline: none;
+      background: transparent;
+    }
+    & input {
+      width: 80px;
+      margin: 0 10px;
+      margin-left: 4px;
+
+      cursor: pointer;
+      text-align: center;
+
+      color: #4a688e;
+      border: 0;
+      border-bottom: 1px dotted #597ba5;
+      outline: none;
+      background: transparent;
+    }
+  }
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
 }

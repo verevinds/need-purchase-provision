@@ -35,7 +35,7 @@ const Statistics: React.FC<IStatistics> = () => {
             },
             value: {
               show: true,
-              fontSize: '16px',
+              fontSize: '24px',
               fontFamily: 'Helvetica, Arial, sans-serif',
               fontWeight: 800,
               color: undefined,
@@ -48,7 +48,7 @@ const Statistics: React.FC<IStatistics> = () => {
               show: true,
               showAlways: true,
               label: 'поданых позиций',
-              fontSize: '10px',
+              fontSize: '15px',
               fontFamily: 'Helvetica, Arial, sans-serif',
               fontWeight: 600,
               color: '#373d3f',
@@ -110,9 +110,20 @@ const Statistics: React.FC<IStatistics> = () => {
   });
   return (
     <div className='statistics'>
-      <Chart options={state2.options} series={state2.series} type='donut' width='450' />
-      <Chart options={state.options} series={state.series} type='donut' width='450' />
-      <Chart options={state3.options} series={state3.series} type='donut' width='450' />
+      <div className='statistics__title'>
+        <span>Общая статистика</span>
+        <select>
+          <option value='0'>по всем заказам</option>
+          <option value='1'>только внутренние</option>
+          <option value='2'>только доходные</option>
+        </select>
+        <input type='text' readOnly value='за 2020' />
+      </div>
+      <div className='statistics__body'>
+        <Chart options={state2.options} series={state2.series} type='donut' width='450' />
+        <Chart options={state.options} series={state.series} type='donut' width='450' />
+        <Chart options={state3.options} series={state3.series} type='donut' width='450' />
+      </div>
     </div>
   );
 };
