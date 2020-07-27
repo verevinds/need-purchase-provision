@@ -14,10 +14,6 @@ const HeaderMenuPopUp: React.FC<IHeaderMenuPopUp> = (props) => {
     <div className='popup'>
       <HeaderMenuPopUpButton {...{ show, setShow }} />
       <div className={`popup__sidebar ${show ? 'popup__sidebar_show' : ''}`}>
-        <div className='popup__sidebar__header'>
-          <HeaderMenuPopUpButton {...{ show, setShow }} /> <HeaderLogo />
-        </div>
-
         <div className='popup__sidebar__links'>
           {linksList.map((_link: TLink, _index: number) => (
             <NavLink
