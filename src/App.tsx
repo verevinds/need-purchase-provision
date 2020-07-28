@@ -16,11 +16,11 @@ import { authRequestSuccessed } from './redux/actionCreators/authAction';
 import { IState } from './redux/reducer';
 import Filter from './components/Filter/Filter';
 import { contractRequestSuccessed } from './redux/actionCreators/contractAction';
+import { usersRequestSeccessed } from './redux/actionCreators/usersAction';
 
 const App = () => {
   const cookies = new Cookies();
   const dispatch = useDispatch();
-  const user = useSelector((state: IState) => state.auth.user);
   const contracts = useSelector((state: IState) => state.contracts);
 
   React.useLayoutEffect(() => {
@@ -38,14 +38,15 @@ const App = () => {
         if (res.data) {
           cookies.set('login', res.data, { path: '/' });
 
-          Axios.get(`http://srv-sdesk.c31.nccp.ru:8080/api/users/${res.data.number}`).then((res) => {
-            dispatch(authRequestSuccessed(res.data));
+          Axios.get(`http://srv-sdesk.c31.nccp.ru:8080/api/users/${res.data.number}`).then((resp: any) => {
+            dispatch(authRequestSuccessed(resp.data));
           });
         }
       })
       .catch((err) => {
         console.error(err);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   React.useLayoutEffect(() => {
@@ -55,6 +56,10 @@ const App = () => {
         actionSuccessed: contractRequestSuccessed,
       }),
     );
+    Axios.get(`http://srv-sdesk.c31.nccp.ru:8080/api/users/`).then((resp: any) => {
+      dispatch(usersRequestSeccessed(resp.data));
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   React.useEffect(() => {

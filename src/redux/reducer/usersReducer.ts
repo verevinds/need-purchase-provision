@@ -1,5 +1,5 @@
-import { IUsersCurrentRequestSeccessed } from '../actionCreators/usersAction';
-import { USERS_CURRENT_REQUEST_SUCCESSED } from '../constants';
+import { IUsersCreator, IUsersCurrentRequestSeccessed } from '../actionCreators/usersAction';
+import { USERS_CURRENT_REQUEST_SUCCESSED, USERS_REQUEST_SUCCESSED } from '../constants';
 import { TPosition } from './positionReducer';
 
 export interface IUsers {
@@ -48,14 +48,18 @@ const initialState: IUsers = {
   isUpdate: true,
 };
 
-const usersReducer = (state = initialState, action: IUsersCurrentRequestSeccessed) => {
+const usersReducer = (state = initialState, action: IUsersCreator) => {
   switch (action.type) {
     case USERS_CURRENT_REQUEST_SUCCESSED:
       return {
         ...state,
         current: { ...state.current, user: action.data[0], isUpdate: false },
       };
-
+    case USERS_REQUEST_SUCCESSED:
+      return {
+        ...state,
+        list: action.data,
+      };
     default:
       return state;
   }
