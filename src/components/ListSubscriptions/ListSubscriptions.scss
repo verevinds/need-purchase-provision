@@ -1,0 +1,26 @@
+.contract {
+  font-size: 13px;
+
+  position: relative;
+
+  color: #45688e;
+  &__block {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px;
+
+    background-color: #eff3f7;
+  }
+  &__button {
+    font-size: 12px;
+
+    padding: 3px 10px 4px;
+
+    cursor: pointer;
+
+    color: white;
+    border-radius: 3px;
+    background: #6588ab;
+  }
+}

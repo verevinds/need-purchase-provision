@@ -1,9 +1,12 @@
 import * as React from 'react';
+import ListSubscriptions from '../../components/ListSubscriptions/ListSubscriptions';
 
-export interface ISubscriptionToOrders {}
-
-const SubscriptionToOrders: React.FC<ISubscriptionToOrders> = () => {
-  return <>subscription-to-orders</>;
+const SubscriptionToOrders: React.FC = () => {
+  return (
+    <>
+      <ListSubscriptions />
+    </>
+  );
 };
 
 export default React.memo(SubscriptionToOrders);
