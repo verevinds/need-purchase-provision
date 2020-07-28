@@ -1,26 +1,85 @@
-.contract {
+.subscriptions {
   font-size: 13px;
 
-  position: relative;
+  display: flex;
+  flex-direction: column;
 
   color: #45688e;
-  &__block {
+
+  $padding: .3rem .5rem;
+  .contract {
     display: flex;
     justify-content: space-between;
 
-    padding: 10px;
+    padding: $padding;
 
     background-color: #eff3f7;
+    &__title {
+      font-weight: 600;
+
+      padding-right: .5rem;
+    }
+    &__button {
+      font-size: 12px;
+
+      height: 100%;
+      padding: 3px 10px 4px;
+
+      cursor: pointer;
+      white-space: nowrap;
+
+      color: white;
+      border-radius: 3px;
+      background: #6588ab;
+    }
   }
-  &__button {
-    font-size: 12px;
+  .order {
+    display: flex;
+    justify-content: space-between;
 
-    padding: 3px 10px 4px;
+    padding: $padding;
 
-    cursor: pointer;
+    background-color: #f6f8fa;
+    &:hover {
+      background-color: #e9edf2;
+    }
+    &__item {
+      font-size: 13px;
 
-    color: white;
-    border-radius: 3px;
-    background: #6588ab;
+      padding-right: .5rem;
+      &__description {
+        color: rgb(128, 128, 128);
+      }
+    }
+    &__group-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &__button {
+        padding: 3px;
+
+        cursor: pointer;
+        text-align: center;
+        white-space: nowrap;
+
+        color: white;
+        background: #97bea5;
+
+        &::before {
+          display: inline-block;
+
+          width: 86px;
+
+          content: 'подписаться';
+          text-align: center;
+        }
+        &_active {
+          background: #ddb7bc;
+          &.order__group-button__button::before {
+            content: 'отписаться';
+          }
+        }
+      }
+    }
   }
 }

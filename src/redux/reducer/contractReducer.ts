@@ -13,10 +13,16 @@ export type TContract = {
   description: string;
   visible: number;
   type: number;
-  createdAt: string;
-  updatedAt: string;
+  orders: (TOrder | never)[];
 };
 
+export type TOrder = {
+  id: number;
+  parent: number;
+  name: string;
+  title: string;
+  description: string;
+};
 const initialContract: IContract = {
   isUpdate: false,
   isLoading: false,

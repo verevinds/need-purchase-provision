@@ -1,20 +1,23 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
-import { TContract } from '../../redux/reducer/contractReducer';
+import { TContract, TOrder } from '../../redux/reducer/contractReducer';
 import { IState } from '../../redux/reducer';
 import './ListSubscriptions.scss';
+import ListSubscriptionsOrder from '../ListSubscriptionsOrder/ListSubscriptionsOrder';
 
 const ListSubscriptions: React.FC = () => {
   const contracts = useSelector((state: IState) => state.contracts.list);
-
   return (
     <>
       {contracts?.map((contract: TContract) => (
-        <div className='contract' key={contract.id}>
-          <div className='contract__block'>
+        <div className='subscriptions' key={contract.id}>
+          <div className='contract'>
             <span className='contract__title'>{`Договор ${contract.name} ${contract.description}`}</span>
-            <div className='contract__button'>добавить заказ</div>
+            <span className='contract__button'>добавить заказ</span>
           </div>
+          {contract.orders?.map((order: TOrder) => (
+            <ListSubscriptionsOrder order={order} key={order.id} />
+          ))}
         </div>
       ))}
     </>
