@@ -5,7 +5,7 @@ function* queryApiAsync({ route, actionSuccessed, actionUpdate, method, data = {
   try {
     let response;
 
-    const URL = `http://srv-sdesk.c31.nccp.ru:8080`;
+    const URL = `http://192.168.213.51:8080`;
     if (params) {
       Object.assign(data, { params });
     }

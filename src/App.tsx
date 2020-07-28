@@ -15,12 +15,13 @@ import { queryApi } from './redux/actionCreators/queryApiAction';
 import { authRequestSuccessed } from './redux/actionCreators/authAction';
 import { IState } from './redux/reducer';
 import Filter from './components/Filter/Filter';
-import Statistics from './layout/MainPage/Statistics';
+import { contractRequestSuccessed } from './redux/actionCreators/contractAction';
 
 const App = () => {
   const cookies = new Cookies();
   const dispatch = useDispatch();
   const user = useSelector((state: IState) => state.auth.user);
+  const contracts = useSelector((state: IState) => state.contracts);
 
   React.useLayoutEffect(() => {
     Axios.get(`${window.location.protocol}//api.nccp-eng.ru/?method=auth.start`, {
@@ -36,13 +37,10 @@ const App = () => {
       .then((res) => {
         if (res.data) {
           cookies.set('login', res.data, { path: '/' });
-          dispatch(
-            queryApi({
-              route: 'users',
-              actionSuccessed: authRequestSuccessed,
-              id: res.data.number,
-            }),
-          );
+
+          Axios.get(`http://srv-sdesk.c31.nccp.ru:8080/api/users/${res.data.number}`).then((res) => {
+            dispatch(authRequestSuccessed(res.data));
+          });
         }
       })
       .catch((err) => {
@@ -50,9 +48,18 @@ const App = () => {
       });
   }, []);
 
+  React.useLayoutEffect(() => {
+    dispatch(
+      queryApi({
+        route: 'libsNumbersOne',
+        actionSuccessed: contractRequestSuccessed,
+      }),
+    );
+  }, []);
+
   React.useEffect(() => {
-    console.log(user);
-  }, [user]);
+    console.log(contracts);
+  }, [contracts]);
 
   return (
     <BrowserRouter>

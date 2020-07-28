@@ -1,7 +1,5 @@
-import constants from '../constants';
+import { USERS_CURRENT_REQUEST_SUCCESSED } from '../constants';
 import { TUser } from '../reducer/usersReducer';
-
-const { USERS_CURRENT_REQUEST_SUCCESSED } = constants;
 
 export const usersCurrentRequestSeccessed = (data: TUser[]) => ({
   type: USERS_CURRENT_REQUEST_SUCCESSED,

@@ -1,6 +1,4 @@
-import constants from '../constants';
-
-const { QUERY_API } = constants;
+import { QUERY_API } from '../constants';
 
 export interface IQueryApi {
   route?: string;

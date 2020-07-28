@@ -1,7 +1,5 @@
-import constants from '../constants';
+import { AUTH_REQUEST_SUCCESSED } from '../constants';
 import { TUser } from '../reducer/usersReducer';
-
-const { AUTH_REQUEST_SUCCESSED } = constants;
 
 export const authRequestSuccessed = (data: TUser) => ({
   type: AUTH_REQUEST_SUCCESSED,

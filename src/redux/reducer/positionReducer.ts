@@ -1,6 +1,4 @@
-import constants from '../constants';
-
-const { POSITIONS_REQUEST_SUCCESSED, POSITIONS_UPDATE } = constants;
+import { POSITIONS_REQUEST_SUCCESSED, POSITIONS_UPDATE } from '../constants';
 
 const initialState = {
   list: [],
