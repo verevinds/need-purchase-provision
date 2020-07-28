@@ -26,9 +26,9 @@ export const authReducer = (state = initialState, action: IAuthRequestSuccessed)
           isRequest: false,
           isUpdate: false,
         };
-      } else {
-        return state;
       }
+      return state;
+
     default:
       return state;
   }
