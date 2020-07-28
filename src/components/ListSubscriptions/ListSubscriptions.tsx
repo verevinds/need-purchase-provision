@@ -12,7 +12,7 @@ const ListSubscriptions: React.FC = () => {
       {contracts?.map((contract: TContract) => (
         <div className='contract' key={contract.id}>
           <div className='contract__block'>
-            <span className='contract__title'>{contract.name}</span>
+            <span className='contract__title'>{`Договор ${contract.name} ${contract.description}`}</span>
             <div className='contract__button'>добавить заказ</div>
           </div>
         </div>
