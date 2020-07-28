@@ -27,17 +27,22 @@
       }
     }
   },
-  "extends": ["airbnb", "airbnb/hooks", "prettier", "plugin:react/recommended"],
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "prettier",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "plugins": ["prettier", "react", "@typescript-eslint"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
-    "no-restricted-imports": ["error", { "paths": [{ "name": "foo", "importNames": ["DisallowedObject"] }] }],
-    "import/resolver": {
-      "typescript": {}
-    },
+    "no-restricted-imports": [2, { "paths": [{ "name": "foo", "importNames": ["DisallowedObject"] }] }],
+
     "import/no-unresolved": [2, { "caseSensitive": false }],
-    "no-lone-blocks": "error",
-    "no-unused-vars": "warn",
+    "no-lone-blocks": 2,
+    "no-unused-vars": 2,
     "react/prop-types": 0,
     "comma-dangle": 0,
     "no-restricted-syntax": 1,
@@ -54,6 +59,6 @@
     "jsx-a11y/no-static-element-interactions": 0,
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/interactive-supports-focus": 0,
-    "consistent-return": "off"
+    "consistent-return": 0
   }
 }
