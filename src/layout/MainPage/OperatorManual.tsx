@@ -1,8 +1,6 @@
 import * as React from 'react';
 
-export interface IOperatorManual {}
-
-const OperatorManual: React.FC<IOperatorManual> = () => {
+const OperatorManual: React.FC = () => {
   return <>manual</>;
 };
 

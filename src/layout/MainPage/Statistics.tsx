@@ -2,9 +2,7 @@ import * as React from 'react';
 import Chart from 'react-apexcharts';
 import './Statistics.scss';
 
-export interface IStatistics {}
-
-const Statistics: React.FC<IStatistics> = () => {
+const Statistics: React.FC = () => {
   const options = {
     plotOptions: {
       pie: {
@@ -29,7 +27,7 @@ const Statistics: React.FC<IStatistics> = () => {
               fontWeight: 600,
               color: undefined,
               offsetY: -10,
-              formatter: function (val) {
+              formatter(val) {
                 return val;
               },
             },
@@ -40,7 +38,7 @@ const Statistics: React.FC<IStatistics> = () => {
               fontWeight: 800,
               color: undefined,
               offsetY: 16,
-              formatter: function (val) {
+              formatter(val) {
                 return val;
               },
             },
@@ -52,7 +50,7 @@ const Statistics: React.FC<IStatistics> = () => {
               fontFamily: 'Helvetica, Arial, sans-serif',
               fontWeight: 600,
               color: '#373d3f',
-              formatter: function (w) {
+              formatter(w) {
                 return w.globals.seriesTotals.reduce((a, b) => {
                   return a + b;
                 }, 0);
@@ -88,7 +86,7 @@ const Statistics: React.FC<IStatistics> = () => {
     },
   };
 
-  const [state, setState] = React.useState({
+  const [state] = React.useState({
     options: {
       ...options,
       labels: ['включены в заявку', 'распределенных', 'необработаных'],
@@ -96,11 +94,11 @@ const Statistics: React.FC<IStatistics> = () => {
     },
     series: [2161, 367, 125],
   });
-  const [state2, setState2] = React.useState({
+  const [state2] = React.useState({
     options: { ...options, labels: ['в процессе', 'завершено', 'отменено'] },
     series: [2434, 1157, 348],
   });
-  const [state3, setState3] = React.useState({
+  const [state3] = React.useState({
     options: {
       ...options,
       labels: ['распределены в срок', 'обработка > 10 дней'],
