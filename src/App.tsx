@@ -18,11 +18,39 @@ import Filter from './components/Filter/Filter';
 import { contractRequestSuccessed } from './redux/actionCreators/contractAction';
 import { usersRequestSeccessed } from './redux/actionCreators/usersAction';
 import { rolesRequestSuccessed } from './redux/actionCreators/rolesAction';
+import { IAuth } from './redux/reducer/authReducer';
+import { IRoles, TRole } from './redux/reducer/rolesReducer';
+import { AppContext } from './AppContext';
 
 const App = () => {
   const cookies = new Cookies();
   const dispatch = useDispatch();
-  const roles = useSelector((state: IState) => state.roles.list);
+  const { user }: IAuth = useSelector((state: IState) => state.auth);
+  const { list: roles }: IRoles = useSelector((state: IState) => state.roles);
+  const rolesSelect = React.useMemo(() => {
+    const filterRolesByUser = roles?.filter((role: TRole) => role.user === user?.number);
+
+    const accessByRole = (extend: number) =>
+      Boolean(filterRolesByUser?.find((role: TRole) => parseInt(String(role.role & extend), 10) > 0));
+
+    const isModerator = accessByRole(1);
+    const isChief = accessByRole(2);
+    const isResponsible = accessByRole(4);
+    const isMatching = accessByRole(8);
+    const isApprovers = accessByRole(16);
+    const isStorekeeper = accessByRole(32);
+    const isEconomist = accessByRole(64);
+
+    return {
+      isModerator,
+      isChief,
+      isResponsible,
+      isMatching,
+      isApprovers,
+      isStorekeeper,
+      isEconomist,
+    };
+  }, [roles, user]);
 
   React.useLayoutEffect(() => {
     Axios.get(`${window.location.protocol}//api.nccp-eng.ru/?method=auth.start`, {
@@ -74,20 +102,22 @@ const App = () => {
   }, [roles]);
 
   return (
-    <BrowserRouter>
-      <Header />
-      <Filter />
-      <Switch>
-        <Redirect exact from='/' to='/main' />
-        <Route exact path='/needs' component={NeedsPage} />
-        <Route exact path='/positions' component={PositionsPage} />
-        <Route exact path='/claims' component={ClaimsPage} />
-        <Route exact path='/nominations' component={NominationPage} />
-        <Route exact path='/stock' component={StockPage} />
+    <AppContext.Provider value={{ roles: rolesSelect }}>
+      <BrowserRouter>
+        <Header />
+        <Filter />
+        <Switch>
+          <Redirect exact from='/' to='/main' />
+          <Route exact path='/needs' component={NeedsPage} />
+          <Route exact path='/positions' component={PositionsPage} />
+          <Route exact path='/claims' component={ClaimsPage} />
+          <Route exact path='/nominations' component={NominationPage} />
+          <Route exact path='/stock' component={StockPage} />
 
-        <Route path='/main' component={MainPage} />
-      </Switch>
-    </BrowserRouter>
+          <Route path='/main' component={MainPage} />
+        </Switch>
+      </BrowserRouter>
+    </AppContext.Provider>
   );
 };
 
