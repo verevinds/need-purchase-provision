@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { takeEvery } from 'redux-saga/effects';
 import { QUERY_API } from '../constants';
 
