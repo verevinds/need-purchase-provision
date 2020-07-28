@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { rolesReducer } from './rolesReducer';
 import { authReducer } from './authReducer';
 import usersReducer from './usersReducer';
 import contractReducer from './contractReducer';
@@ -7,6 +8,7 @@ const CombineReducers = combineReducers({
   users: usersReducer,
   auth: authReducer,
   contracts: contractReducer,
+  roles: rolesReducer,
 });
 
 export type IState = ReturnType<typeof CombineReducers>;

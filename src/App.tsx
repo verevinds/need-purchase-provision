@@ -17,11 +17,12 @@ import { IState } from './redux/reducer';
 import Filter from './components/Filter/Filter';
 import { contractRequestSuccessed } from './redux/actionCreators/contractAction';
 import { usersRequestSeccessed } from './redux/actionCreators/usersAction';
+import { rolesRequestSuccessed } from './redux/actionCreators/rolesAction';
 
 const App = () => {
   const cookies = new Cookies();
   const dispatch = useDispatch();
-  const contracts = useSelector((state: IState) => state.contracts);
+  const roles = useSelector((state: IState) => state.roles.list);
 
   React.useLayoutEffect(() => {
     Axios.get(`${window.location.protocol}//api.nccp-eng.ru/?method=auth.start`, {
@@ -56,6 +57,12 @@ const App = () => {
         actionSuccessed: contractRequestSuccessed,
       }),
     );
+    dispatch(
+      queryApi({
+        route: 'libsRoles',
+        actionSuccessed: rolesRequestSuccessed,
+      }),
+    );
     Axios.get(`http://srv-sdesk.c31.nccp.ru:8080/api/users/`).then((resp: any) => {
       dispatch(usersRequestSeccessed(resp.data));
     });
@@ -63,8 +70,8 @@ const App = () => {
   }, []);
 
   React.useEffect(() => {
-    console.log(contracts);
-  }, [contracts]);
+    console.log(roles);
+  }, [roles]);
 
   return (
     <BrowserRouter>
