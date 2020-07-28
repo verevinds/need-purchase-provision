@@ -1,9 +1,15 @@
 import * as React from 'react';
+import './About.scss';
+import History from '../../components/History/History';
+import Roles from '../../components/Roles/Roles';
 
-export interface IAbout {}
-
-const About: React.FC<IAbout> = () => {
-  return <>about</>;
+const About: React.FC = () => {
+  return (
+    <div className='about'>
+      <Roles />
+      <History />
+    </div>
+  );
 };
 
 export default React.memo(About);

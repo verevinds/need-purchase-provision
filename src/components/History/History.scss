@@ -1,0 +1,50 @@
+.history {
+  max-width: 370px;
+  margin: .5rem 2rem;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: .6rem;
+    &__date {
+      font-size: 13px;
+      font-weight: 600;
+    }
+    &__content {
+      ul {
+        margin-left: 18px;
+      }
+      li {
+        font-size: 13px;
+        line-height: 18px;
+
+        list-style: square outside none;
+
+        color: rgb(117, 142, 172);
+        span {
+          color: #606060;
+        }
+      }
+    }
+    &__button {
+      font-size: 8pt;
+      line-height: 35px;
+
+      clear: both;
+
+      width: 140px;
+      height: 35px;
+      margin: 0 auto 30px;
+
+      cursor: pointer;
+      text-align: center;
+
+      color: #607387;
+      background: #ecf0f4;
+      &:hover {
+        background: #e6eaee;
+      }
+    }
+  }
+}
