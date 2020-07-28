@@ -30,7 +30,10 @@
   "extends": [
     "airbnb",
     "airbnb/hooks",
-    "prettier",
+    "plugin:prettier/recommended",
+    "prettier/flowtype",
+    "prettier/react",
+    "prettier/standard",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended"
