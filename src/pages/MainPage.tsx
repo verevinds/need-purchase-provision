@@ -1,13 +1,24 @@
 import * as React from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import Submenu from '../components/Submenu/Submenu';
 import Statistics from '../layout/MainPage/Statistics';
 import About from '../layout/MainPage/About';
 import OperatorManual from '../layout/MainPage/OperatorManual';
 import SubscriptionToOrders from '../layout/MainPage/SubscriptionToOrders';
+import Filter from '../components/Filter/Filter';
 
 const MainPage: React.FC = () => {
+  const linksList = [
+    { name: 'Статистика', url: '/main', link: 'statistics' },
+    { name: 'Подписка на заказы', url: '/main', link: 'subscription-to-orders' },
+    { name: 'О системе', url: '/main', link: 'about' },
+    { name: 'Руководство оператора', url: '/main', link: 'operator-manual' },
+  ];
   return (
     <>
+      <Filter>
+        <Submenu {...{ linksList }} />
+      </Filter>
       <Redirect exact from='/main' to='/main/statistics' />
 
       <Route exact path='/main/statistics' component={Statistics} />

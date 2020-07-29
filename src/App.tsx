@@ -114,7 +114,6 @@ const App = () => {
     <AppContext.Provider value={{ roles: rolesSelect }}>
       <BrowserRouter>
         <Header />
-        <Filter />
         <Switch>
           <Redirect exact from='/' to='/main' />
           <Route exact path='/needs' component={NeedsPage} />

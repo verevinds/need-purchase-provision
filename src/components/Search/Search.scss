@@ -1,0 +1,55 @@
+.search {
+  z-index: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  min-width: 100px;
+  height: 27px;
+  margin: .5rem 0 0 .8rem;
+
+  border: 1px solid #ededed;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+
+  -khtml-border-radius: 2px;
+
+  &__icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: .5rem;
+
+    color: #b2b2b2;
+    svg {
+      -webkit-transform: scale(-1, 1);
+      -moz-transform: scale(-1, 1);
+      -o-transform: scale(-1, 1);
+      transform: scale(-1, 1);
+
+      -ms-filter: 'FlipH';
+      filter: FlipH;
+    }
+  }
+
+  &__input {
+    font-size: 8pt;
+
+    top: 2px;
+    left: 23px;
+
+    width: 100%;
+    margin: 0;
+    padding: .4rem;
+
+    color: #b2b2b2;
+    border: none;
+    outline: none;
+    background: transparent;
+
+    -moz-appearance: none;
+  }
+}

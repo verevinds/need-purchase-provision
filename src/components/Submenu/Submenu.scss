@@ -1,5 +1,5 @@
 .submenu {
-  margin: 13px;
+  margin-bottom: .5rem;
   &__point {
     font-size: 8pt;
     font-weight: bold;
@@ -7,7 +7,7 @@
     display: table;
     float: left;
 
-    margin-right: 10px;
+    margin: .5rem 0 0 .8rem;
     padding: 3px 7px 4px;
 
     cursor: pointer;
