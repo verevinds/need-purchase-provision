@@ -38,13 +38,13 @@ const Roles: React.FC = () => {
   return (
     <div className='roles'>
       <h5>Роли в Системе</h5>
-      <RolesRole title='Модераторы' localUsers={moderators} />
-      <RolesRole title='Начальники КО' localUsers={chiefs} />
-      <RolesRole title='Ответственные КО' localUsers={responsiblies} />
-      <RolesRole title='Согласующие' localUsers={matching} />
-      <RolesRole title='Утверждающие' localUsers={approvers} />
-      <RolesRole title='Кладовщики' localUsers={storekeeper} />
-      <RolesRole title='Экономисты' localUsers={economist} />
+      <RolesRole title='Модераторы' localUsers={moderators} extent={1} />
+      <RolesRole title='Начальники КО' localUsers={chiefs} extent={2} />
+      <RolesRole title='Ответственные КО' localUsers={responsiblies} extent={4} />
+      <RolesRole title='Согласующие' localUsers={matching} extent={8} />
+      <RolesRole title='Утверждающие' localUsers={approvers} extent={16} />
+      <RolesRole title='Кладовщики' localUsers={storekeeper} extent={32} />
+      <RolesRole title='Экономисты' localUsers={economist} extent={64} />
     </div>
   );
 };
