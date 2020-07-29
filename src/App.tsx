@@ -113,18 +113,16 @@ const App = () => {
     <AppContext.Provider value={{ roles: rolesSelect }}>
       <BrowserRouter>
         <Header />
-        <div className='content'>
-          <Switch>
-            <Redirect exact from='/' to='/main' />
-            <Route exact path='/needs' component={NeedsPage} />
-            <Route exact path='/positions' component={PositionsPage} />
-            <Route exact path='/claims' component={ClaimsPage} />
-            <Route exact path='/nominations' component={NominationPage} />
-            <Route exact path='/stock' component={StockPage} />
+        <Switch>
+          <Redirect exact from='/' to='/main' />
+          <Route exact path='/needs' component={NeedsPage} />
+          <Route exact path='/positions' component={PositionsPage} />
+          <Route exact path='/claims' component={ClaimsPage} />
+          <Route exact path='/nominations' component={NominationPage} />
+          <Route exact path='/stock' component={StockPage} />
 
-            <Route path='/main' component={MainPage} />
-          </Switch>
-        </div>
+          <Route path='/main' component={MainPage} />
+        </Switch>
       </BrowserRouter>
     </AppContext.Provider>
   );
