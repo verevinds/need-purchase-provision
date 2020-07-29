@@ -27,7 +27,9 @@ const App = () => {
   const cookies = new Cookies();
   const dispatch = useDispatch();
   const { user }: IAuth = useSelector((state: IState) => state.auth);
-  const { list: roles }: IRoles = useSelector((state: IState) => state.roles);
+  const { list: roles, isUpdate: isUpdateRoles }: IRoles = useSelector(
+    (state: IState) => state.roles,
+  );
   const rolesSelect = React.useMemo(() => {
     const filterRolesByUser = roles?.filter((role: TRole) => role.user === user?.number);
 
@@ -88,17 +90,21 @@ const App = () => {
         actionSuccessed: contractRequestSuccessed,
       }),
     );
+
+    Axios.get(`http://srv-sdesk.c31.nccp.ru:8080/api/users/`).then((resp: any) => {
+      dispatch(usersRequestSeccessed(resp.data));
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  React.useLayoutEffect(() => {
     dispatch(
       queryApi({
         route: 'libsRoles',
         actionSuccessed: rolesRequestSuccessed,
       }),
     );
-    Axios.get(`http://srv-sdesk.c31.nccp.ru:8080/api/users/`).then((resp: any) => {
-      dispatch(usersRequestSeccessed(resp.data));
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch, isUpdateRoles]);
 
   React.useEffect(() => {
     console.log(roles);
