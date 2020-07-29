@@ -2,11 +2,8 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import { IHeaderMenu, TLink } from '../HeaderMenu/HeaderMenu';
 import HeaderMenuPopUpButton from '../HeaderMenuPopUpButton/HeaderMenuPopUpButton';
-import HeaderLogo from '../HeaderLogo/HeaderLogo';
 
-export interface IHeaderMenuPopUp extends IHeaderMenu {}
-
-const HeaderMenuPopUp: React.FC<IHeaderMenuPopUp> = (props) => {
+const HeaderMenuPopUp: React.FC<IHeaderMenu> = (props) => {
   const { url, linksList } = props;
   const [show, setShow] = React.useState(false);
 
@@ -22,9 +19,8 @@ const HeaderMenuPopUp: React.FC<IHeaderMenuPopUp> = (props) => {
               className='header__menu__point'
               activeClassName='active'
               data-id={`${_index}`}
-              key={_index}
-              onClick={() => setShow(false)}
-            >
+              key={_link.url}
+              onClick={() => setShow(false)}>
               {_link.name}
             </NavLink>
           ))}

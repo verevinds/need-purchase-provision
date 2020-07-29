@@ -25,5 +25,16 @@
 
       width: 412px;
     }
+    @media (max-width: 675px) {
+      justify-content: space-between;
+
+      width: 412px;
+    }
+
+    @media (max-width: 412px) {
+      justify-content: space-between;
+
+      width: 220px;
+    }
   }
 }

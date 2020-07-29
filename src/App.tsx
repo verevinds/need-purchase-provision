@@ -14,7 +14,6 @@ import StockPage from './pages/StockPage';
 import { queryApi } from './redux/actionCreators/queryApiAction';
 import { authRequestSuccessed } from './redux/actionCreators/authAction';
 import { IState } from './redux/reducer';
-import Filter from './components/Filter/Filter';
 import { contractRequestSuccessed } from './redux/actionCreators/contractAction';
 import { usersRequestSeccessed } from './redux/actionCreators/usersAction';
 import { rolesRequestSuccessed } from './redux/actionCreators/rolesAction';
@@ -114,16 +113,18 @@ const App = () => {
     <AppContext.Provider value={{ roles: rolesSelect }}>
       <BrowserRouter>
         <Header />
-        <Switch>
-          <Redirect exact from='/' to='/main' />
-          <Route exact path='/needs' component={NeedsPage} />
-          <Route exact path='/positions' component={PositionsPage} />
-          <Route exact path='/claims' component={ClaimsPage} />
-          <Route exact path='/nominations' component={NominationPage} />
-          <Route exact path='/stock' component={StockPage} />
+        <div className='content'>
+          <Switch>
+            <Redirect exact from='/' to='/main' />
+            <Route exact path='/needs' component={NeedsPage} />
+            <Route exact path='/positions' component={PositionsPage} />
+            <Route exact path='/claims' component={ClaimsPage} />
+            <Route exact path='/nominations' component={NominationPage} />
+            <Route exact path='/stock' component={StockPage} />
 
-          <Route path='/main' component={MainPage} />
-        </Switch>
+            <Route path='/main' component={MainPage} />
+          </Switch>
+        </div>
       </BrowserRouter>
     </AppContext.Provider>
   );
