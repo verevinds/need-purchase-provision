@@ -21,6 +21,7 @@ import { rolesRequestSuccessed } from './redux/actionCreators/rolesAction';
 import { IAuth } from './redux/reducer/authReducer';
 import { IRoles, TRole } from './redux/reducer/rolesReducer';
 import { AppContext } from './AppContext';
+import bitwiseRole from './js/bitwiseRole';
 
 const App = () => {
   const cookies = new Cookies();
@@ -30,8 +31,8 @@ const App = () => {
   const rolesSelect = React.useMemo(() => {
     const filterRolesByUser = roles?.filter((role: TRole) => role.user === user?.number);
 
-    const accessByRole = (extend: number) =>
-      Boolean(filterRolesByUser?.find((role: TRole) => parseInt(String(role.role & extend), 10) > 0));
+    const accessByRole = (extent: number) =>
+      filterRolesByUser ? Boolean(bitwiseRole(filterRolesByUser, extent).find) : false;
 
     const isModerator = accessByRole(1);
     const isChief = accessByRole(2);
@@ -67,9 +68,11 @@ const App = () => {
         if (res.data) {
           cookies.set('login', res.data, { path: '/' });
 
-          Axios.get(`http://srv-sdesk.c31.nccp.ru:8080/api/users/${res.data.number}`).then((resp: any) => {
-            dispatch(authRequestSuccessed(resp.data));
-          });
+          Axios.get(`http://srv-sdesk.c31.nccp.ru:8080/api/users/${res.data.number}`).then(
+            (resp: any) => {
+              dispatch(authRequestSuccessed(resp.data));
+            },
+          );
         }
       })
       .catch((err) => {
