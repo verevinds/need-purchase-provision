@@ -1,5 +1,5 @@
 import { RolesAction } from '../actionCreators/rolesAction';
-import { RULES_REQUEST_SUCCESSED } from '../constants';
+import { RULES_REQUEST_SUCCESSED, RULES_UPDATE } from '../constants';
 
 const initialRoles: IRoles = {
   isUpdate: false,
@@ -23,6 +23,12 @@ export const rolesReducer = (state = initialRoles, action: RolesAction) => {
         list: action.data,
         isUpdate: false,
         isLoading: true,
+      };
+    case RULES_UPDATE:
+      return {
+        ...state,
+        isUpdate: true,
+        isLoading: false,
       };
     default:
       return state;
