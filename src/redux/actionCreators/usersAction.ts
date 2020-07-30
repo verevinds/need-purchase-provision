@@ -15,4 +15,6 @@ export interface IUsersCurrentRequestSeccessed {
   data: TUser[];
 }
 
-export type IUsersCreator = ReturnType<typeof usersCurrentRequestSeccessed> | ReturnType<typeof usersRequestSeccessed>;
+export type IUsersCreator =
+  | ReturnType<typeof usersCurrentRequestSeccessed>
+  | ReturnType<typeof usersRequestSeccessed>;
