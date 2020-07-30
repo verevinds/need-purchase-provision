@@ -17,18 +17,19 @@ import { IState } from './redux/reducer';
 import { contractRequestSuccessed } from './redux/actionCreators/contractAction';
 import { usersRequestSeccessed } from './redux/actionCreators/usersAction';
 import { rolesRequestSuccessed } from './redux/actionCreators/rolesAction';
-import { IAuth } from './redux/reducer/authReducer';
-import { IRoles, TRole } from './redux/reducer/rolesReducer';
+import { TRole } from './redux/reducer/rolesReducer';
 import { AppContext } from './AppContext';
 import bitwiseRole from './js/bitwiseRole';
+import { needsRequestSuccessed } from './redux/actionCreators/needsAction';
 
 const App = () => {
   const cookies = new Cookies();
   const dispatch = useDispatch();
-  const { user }: IAuth = useSelector((state: IState) => state.auth);
-  const { list: roles, isUpdate: isUpdateRoles }: IRoles = useSelector(
-    (state: IState) => state.roles,
-  );
+  const {
+    roles: { list: roles, isUpdate: isUpdateRoles },
+    auth: { user },
+    needs: { list: needs, isUpdate: isUpdateNeeds },
+  }: IState = useSelector((state: IState) => state);
   const rolesSelect = React.useMemo(() => {
     const filterRolesByUser = roles?.filter((role: TRole) => role.user === user?.number);
 
@@ -105,9 +106,18 @@ const App = () => {
     );
   }, [dispatch, isUpdateRoles]);
 
+  React.useLayoutEffect(() => {
+    dispatch(
+      queryApi({
+        route: 'needs',
+        actionSuccessed: needsRequestSuccessed,
+      }),
+    );
+  }, [dispatch, isUpdateNeeds]);
+
   React.useEffect(() => {
-    console.log(roles);
-  }, [roles]);
+    console.log(needs);
+  }, [needs]);
 
   return (
     <AppContext.Provider value={{ roles: rolesSelect }}>
