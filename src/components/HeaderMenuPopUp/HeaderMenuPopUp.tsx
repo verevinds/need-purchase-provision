@@ -19,7 +19,7 @@ const HeaderMenuPopUp: React.FC<IHeaderMenu> = (props) => {
               className='header__menu__point'
               activeClassName='active'
               data-id={`${_index}`}
-              key={_link.url}
+              key={Math.random()}
               onClick={() => setShow(false)}>
               {_link.name}
             </NavLink>
