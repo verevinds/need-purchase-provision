@@ -7,9 +7,15 @@ interface ISwitch {
   id: string;
   text: string;
   checked?: boolean;
+  onClick?: (check: boolean) => void;
 }
-const Switch: React.FC<ISwitch> = ({ size = 10, text, checked, id }) => {
-  const [isCheck, setIsCheck] = React.useState(checked || false);
+const Switch: React.FC<ISwitch> = ({ size = 10, text, checked, id, onClick }) => {
+  const [isCheck, setIsCheck] = React.useState(checked);
+
+  React.useLayoutEffect(() => {
+    setIsCheck(checked);
+  }, [checked]);
+
   return (
     <div className='switch' style={{ fontSize: `${size}px` }}>
       <input
@@ -17,7 +23,11 @@ const Switch: React.FC<ISwitch> = ({ size = 10, text, checked, id }) => {
         id={id}
         className='switch__input'
         checked={isCheck}
-        onChange={() => setIsCheck(!isCheck)}
+        onChange={() => {
+          const newIsChek = !isCheck;
+          setIsCheck(newIsChek);
+          if (onClick) onClick(newIsChek);
+        }}
       />
       <label className='switch__label' htmlFor={id} style={{ fontSize: `${size}px` }} />
       <span className='switch__text'>{text}</span>

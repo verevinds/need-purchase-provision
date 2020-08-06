@@ -1,8 +1,20 @@
 import { put, call } from 'redux-saga/effects';
 import axios from 'axios';
 
-function* queryApiAsync({ route, actionSuccessed, actionUpdate, method, data = {}, id, params }) {
+function* queryApiAsync({
+  route,
+  actionSuccessed,
+  actionUpdate,
+  actionSend,
+  method,
+  data = {},
+  id,
+  params,
+}) {
   try {
+    if (actionSend) {
+      yield put(actionSend());
+    }
     let response;
 
     const URL = `http://192.168.213.51:8080`;

@@ -9,10 +9,11 @@ export interface IQueryApi {
     data: any;
   };
   actionUpdate?: (type: string, data: any) => void;
+  actionSend?: (type: string) => void;
   method?: string;
   data?: any;
   id?: number;
-  params?: {};
+  params?: any;
   userNumber?: number;
 }
 
@@ -20,6 +21,7 @@ export const queryApi = ({
   route,
   actionSuccessed,
   actionUpdate,
+  actionSend,
   method,
   data,
   id,
@@ -30,6 +32,7 @@ export const queryApi = ({
   route,
   actionSuccessed,
   actionUpdate,
+  actionSend,
   data,
   id,
   method,

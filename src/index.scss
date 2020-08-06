@@ -4,6 +4,8 @@
 }
 body {
   font-family: tahoma, arial, verdana, sans-serif, Lucida Sans;
+
+  overflow-x: hidden;
 }
 
 h5 {
@@ -16,4 +18,19 @@ h6 {
   font-size: 13px;
 
   width: 135px;
+}
+.need-page {
+  overflow-y: auto;
+
+  height: 100vh;
+  &::-webkit-scrollbar {
+    width: .5em;
+  }
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  }
+  &::-webkit-scrollbar-thumb {
+    outline: 1px solid slategrey;
+    background-color: darkgrey;
+  }
 }

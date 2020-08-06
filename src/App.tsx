@@ -21,6 +21,7 @@ import { TRole } from './redux/reducer/rolesReducer';
 import { AppContext } from './AppContext';
 import bitwiseRole from './js/bitwiseRole';
 import { needsRequestSuccessed } from './redux/actionCreators/needsAction';
+import { filterIrrelevantUpdate, filterShowMeUpdate } from './redux/actionCreators/filterAction';
 
 const App = () => {
   const cookies = new Cookies();
@@ -28,8 +29,9 @@ const App = () => {
   const {
     roles: { list: roles, isUpdate: isUpdateRoles },
     auth: { user },
-    needs: { list: needs, isUpdate: isUpdateNeeds },
+    needs: { isUpdate: isUpdateNeeds },
   }: IState = useSelector((state: IState) => state);
+  const showMe = useSelector((state: IState) => state.filter.needs.showMe);
   const rolesSelect = React.useMemo(() => {
     const filterRolesByUser = roles?.filter((role: TRole) => role.user === user?.number);
 
@@ -107,17 +109,36 @@ const App = () => {
   }, [dispatch, isUpdateRoles]);
 
   React.useLayoutEffect(() => {
-    dispatch(
-      queryApi({
-        route: 'needs',
-        actionSuccessed: needsRequestSuccessed,
-      }),
-    );
-  }, [dispatch, isUpdateNeeds]);
+    if (showMe) {
+      dispatch(
+        queryApi({
+          route: 'needs',
+          actionSuccessed: needsRequestSuccessed,
+          params: { userNumber: user?.number },
+        }),
+      );
+    } else {
+      dispatch(
+        queryApi({
+          route: 'needs',
+          actionSuccessed: needsRequestSuccessed,
+          params: { limit: 25, offset: 0 },
+        }),
+      );
+    }
+  }, [dispatch, isUpdateNeeds, user, showMe]);
 
-  React.useEffect(() => {
-    console.log(needs);
-  }, [needs]);
+  React.useLayoutEffect(() => {
+    function getFilterFromLocalStorage(name: string, action: (check: boolean) => void) {
+      const filterParameter = localStorage.getItem(name);
+
+      if (filterParameter === 'false' || filterParameter === 'true')
+        dispatch(action(JSON.parse(filterParameter)));
+    }
+
+    getFilterFromLocalStorage('irrelevant', filterIrrelevantUpdate);
+    getFilterFromLocalStorage('showMe', filterShowMeUpdate);
+  }, [dispatch]);
 
   return (
     <AppContext.Provider value={{ roles: rolesSelect }}>

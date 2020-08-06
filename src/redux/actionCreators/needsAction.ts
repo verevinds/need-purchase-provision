@@ -1,6 +1,12 @@
-import { NEEDS_REQUEST_SUCCESSED, NEEDS_UPDATE } from '../constants';
+import { TContract, TOrder } from '../reducer/contractReducer';
+import {
+  NEEDS_REQUEST_SUCCESSED,
+  NEEDS_LOADED_REQUEST_SUCCESSED,
+  NEEDS_UPDATE,
+  NEEDS_FETCH,
+} from '../constants';
 
-export type TNeeds = {
+export type TNeed = {
   id: number;
   user: number;
   number1: number;
@@ -13,19 +19,36 @@ export type TNeeds = {
   import: string;
   createdAt: string;
   updatedAt: string;
+  contracts: TContract;
+  orders: TOrder;
+  needLogs: TNeedLogs[];
 };
 
-export const needsRequestSuccessed = (data: TNeeds) => ({ type: NEEDS_REQUEST_SUCCESSED, data });
+export type TNeedLogs = {
+  id: number;
+  value: string;
+  user: number;
+  type: number;
+  timestamp: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export const needsRequestSuccessed = (data: TNeed) => ({ type: NEEDS_REQUEST_SUCCESSED, data });
+export const needsLoadedRequestSuccessed = (data: TNeed) => ({
+  type: NEEDS_LOADED_REQUEST_SUCCESSED,
+  data,
+});
 export const needsUpdate = () => ({ type: NEEDS_UPDATE });
-
-export interface INeedsRequestSeccessed {
-  type: typeof NEEDS_REQUEST_SUCCESSED;
-  data: TNeeds[];
+export const needsFetch = () => ({ type: NEEDS_FETCH });
+export interface INeedsByData {
+  type:
+    | typeof NEEDS_REQUEST_SUCCESSED
+    | typeof NEEDS_UPDATE
+    | typeof NEEDS_LOADED_REQUEST_SUCCESSED;
+  data: TNeed[];
 }
-
-export interface INeedsUpdate {
-  type: typeof NEEDS_UPDATE;
-  data: TNeeds[];
+export interface INeedsLoading {
+  type: typeof NEEDS_FETCH;
 }
-
-export type TNeedsActions = INeedsRequestSeccessed | INeedsUpdate;
+export type TNeedsActions = INeedsByData | INeedsLoading;
