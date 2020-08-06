@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Switch /> render success 1`] = `
+<div
+  className="switch"
+  style={
+    Object {
+      "fontSize": "10px",
+    }
+  }
+>
+  <input
+    checked={false}
+    className="switch__input"
+    id={1}
+    onClick={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="switch__label"
+    htmlFor={1}
+    style={
+      Object {
+        "fontSize": "10px",
+      }
+    }
+  />
+  <span
+    className="switch__text"
+  >
+    Мои заявки
+  </span>
+</div>
+`;

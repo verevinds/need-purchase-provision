@@ -22,8 +22,8 @@ const Switch: React.FC<ISwitch> = ({ size = 10, text, checked, id, onClick }) =>
         type='checkbox'
         id={id}
         className='switch__input'
-        checked={isCheck}
-        onChange={() => {
+        checked={isCheck || false}
+        onClick={() => {
           const newIsChek = !isCheck;
           setIsCheck(newIsChek);
           if (onClick) onClick(newIsChek);
