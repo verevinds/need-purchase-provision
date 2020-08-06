@@ -6,6 +6,7 @@
 2. [:scroll: Скрипты](#scroll-скрипты)
    1. [:straight_ruler: Запуск для разработки](#straight_ruler-запуск-для-разработки)
    2. [:dollar: Продакшен](#dollar-продакшен)
+   3. [:bookmark_tabs: Тесты](#bookmark_tabs-тесты) 
 
 ## :package: Установка
 
