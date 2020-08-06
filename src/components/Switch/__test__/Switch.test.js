@@ -1,20 +1,19 @@
 import React from 'react';
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import Switch from '../Switch';
-import { render, cleanup } from '@testing-library/react';
-
 import renderer, { act } from 'react-test-renderer';
+
+import Switch from '../Switch';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-// { size = 10, text, checked, id, onClick }
+// props { size = 10, text, checked, id, onClick }
 describe('<Switch />', () => {
   const component = renderer.create(<Switch id={1} text='Мои заявки' />);
   const instance = component.root;
   const input = instance.findByType('input');
   const span = instance.findByType('span');
-  console.log(input.props);
+
   test('render success', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
@@ -26,9 +25,7 @@ describe('<Switch />', () => {
   });
   test('checkbox changes his value on the click', () => {
     expect(input.props.checked).toEqual(false);
-    act(() => {
-      input.props.onClick();
-    });
+    act(() => input.props.onClick());
     expect(input.props.checked).toEqual(true);
   });
 });
