@@ -6,7 +6,8 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --watch",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "updateSnapshots": "jest --u"
   },
   "browserslist": "> 0.25%, not dead",
   "keywords": [
@@ -14,10 +15,18 @@
     "react"
   ],
   "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "html"
+    ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/*",
       "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-    }
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "author": "Verevin S. Denis <verevinds@yandex.ru>",
   "license": "ISC",
@@ -70,6 +79,7 @@
     "css-loader": "^3.6.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.5.0",
     "eslint": "^7.2.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
