@@ -9,6 +9,7 @@ import Switch from '../Switch';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('<Switch />', () => {
+  /** initialize component */
   const mockFn = jest.fn();
   const initialProps = { size: 15, text: 'Мои заявки', id: 1, onClick: mockFn };
   const jsxComponent = (
@@ -25,6 +26,7 @@ describe('<Switch />', () => {
   const input = wrapper.find('.switch__input');
   const span = wrapper.find('.switch__text');
 
+  /** tests */
   it('should be defined', () => {
     expect(Switch).toBeDefined();
   });
