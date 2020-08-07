@@ -9,6 +9,7 @@ interface ISwitch {
   checked?: boolean;
   onClick?: (check: boolean) => void;
 }
+
 const Switch: React.FC<ISwitch> = ({ size = 10, text, checked, id, onClick }) => {
   const [isCheck, setIsCheck] = React.useState(checked);
 
@@ -23,7 +24,7 @@ const Switch: React.FC<ISwitch> = ({ size = 10, text, checked, id, onClick }) =>
         id={id}
         className='switch__input'
         checked={isCheck || false}
-        onClick={() => {
+        onChange={() => {
           const newIsChek = !isCheck;
           setIsCheck(newIsChek);
           if (onClick) onClick(newIsChek);
