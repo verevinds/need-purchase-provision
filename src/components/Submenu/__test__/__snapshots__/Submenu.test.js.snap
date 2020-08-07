@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Submenu /> render success 1`] = `
+"<div className=\\"submenu\\">
+  <NavLink exact={true} to=\\"/main/statistics\\" className=\\"submenu__point\\" activeClassName=\\"submenu__point_active\\" data-id=\\"0\\">
+    Статистика
+  </NavLink>
+  <NavLink exact={true} to=\\"/main/subscription-to-orders\\" className=\\"submenu__point\\" activeClassName=\\"submenu__point_active\\" data-id=\\"1\\">
+    Подписка на заказы
+  </NavLink>
+  <NavLink exact={true} to=\\"/main/about\\" className=\\"submenu__point\\" activeClassName=\\"submenu__point_active\\" data-id=\\"2\\">
+    О системе
+  </NavLink>
+  <NavLink exact={true} to=\\"/main/operator-manual\\" className=\\"submenu__point\\" activeClassName=\\"submenu__point_active\\" data-id=\\"3\\">
+    Руководство оператора
+  </NavLink>
+</div>"
+`;
