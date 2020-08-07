@@ -7,7 +7,8 @@
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --watch",
     "test": "jest --watchAll",
-    "updateSnapshots": "jest --u"
+    "updateSnapshots": "jest --u",
+    "coverage": "jest --coverage"
   },
   "browserslist": "> 0.25%, not dead",
   "keywords": [
