@@ -5,7 +5,7 @@ exports[`<Switch /> render success 1`] = `
   className="switch"
   style={
     Object {
-      "fontSize": "10px",
+      "fontSize": "15px",
     }
   }
 >
@@ -13,7 +13,7 @@ exports[`<Switch /> render success 1`] = `
     checked={false}
     className="switch__input"
     id={1}
-    onClick={[Function]}
+    onChange={[Function]}
     type="checkbox"
   />
   <label
@@ -21,7 +21,7 @@ exports[`<Switch /> render success 1`] = `
     htmlFor={1}
     style={
       Object {
-        "fontSize": "10px",
+        "fontSize": "15px",
       }
     }
   />
