@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RolesRoleTag /> render success for Moderator 1`] = `
+<Memo(RolesRoleTag)
+  handleDelete={[MockFunction]}
+  user={
+    Object {
+      "accesses": Array [
+        Object {
+          "access": 1,
+          "createdAt": "2020-06-25T07:00:07.260Z",
+          "id": 72,
+          "updatedAt": "2020-06-25T07:00:07.260Z",
+          "userNumber": 81251,
+        },
+        Object {
+          "access": 999,
+          "createdAt": "2020-06-25T07:00:19.464Z",
+          "id": 73,
+          "updatedAt": "2020-06-25T07:00:19.464Z",
+          "userNumber": 81251,
+        },
+      ],
+      "computer": "",
+      "createdAt": "2020-07-08T04:17:31.062Z",
+      "department": Object {
+        "createdAt": "2020-07-08T04:09:26.067Z",
+        "id": 2150,
+        "name": "Лаборатория информационных технологий (ИТ)",
+        "parent": 2120,
+        "updatedAt": "2020-07-08T04:09:26.067Z",
+      },
+      "departmentId": 2150,
+      "dob": "1994-05-27",
+      "email": "vds81251@c31.nccp.ru",
+      "exmail": "",
+      "fired": 0,
+      "login": null,
+      "name1": "Веревин",
+      "name2": "Денис",
+      "name3": "Сергеевич",
+      "number": 81251,
+      "phone1": "11-61",
+      "phone2": "",
+      "photo": "http://www.c31.nccp.ru/img/foto/81251.jpg",
+      "position": Object {
+        "createdAt": "2020-05-21T13:32:46.669Z",
+        "id": 41675,
+        "level": 1,
+        "name": "Инженер-программист ",
+        "parent": null,
+        "responsibles": Array [
+          Object {
+            "categoryId": null,
+            "departmentId": null,
+            "isArchive": null,
+            "optionId": null,
+            "positionId": 41675,
+            "propertyId": 32,
+            "userNumber": null,
+          },
+          Object {
+            "categoryId": null,
+            "departmentId": null,
+            "isArchive": null,
+            "optionId": null,
+            "positionId": 41675,
+            "propertyId": 33,
+            "userNumber": null,
+          },
+        ],
+        "updatedAt": "2020-07-15T04:59:08.365Z",
+      },
+      "positionId": 41675,
+      "sex": 1,
+      "updatedAt": "2020-07-08T04:17:31.062Z",
+    }
+  }
+>
+  <div
+    className="tag"
+    key="81251"
+  >
+    <span
+      className="tag__text"
+    >
+      Веревин
+       
+      Д.
+       
+      С.
+    </span>
+    <FontAwesomeIcon
+      border={false}
+      className="tag__close"
+      fixedWidth={false}
+      flip={null}
+      icon={
+        Object {
+          "icon": Array [
+            352,
+            512,
+            Array [],
+            "f00d",
+            "M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z",
+          ],
+          "iconName": "times",
+          "prefix": "fas",
+        }
+      }
+      inverse={false}
+      listItem={false}
+      mask={null}
+      onClick={[Function]}
+      pull={null}
+      pulse={false}
+      rotation={null}
+      size={null}
+      spin={false}
+      swapOpacity={false}
+      symbol={false}
+      title=""
+      transform={null}
+    >
+      <svg
+        aria-hidden="true"
+        className="svg-inline--fa fa-times fa-w-11 tag__close"
+        data-icon="times"
+        data-prefix="fas"
+        focusable="false"
+        onClick={[Function]}
+        role="img"
+        style={Object {}}
+        viewBox="0 0 352 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+          fill="currentColor"
+          style={Object {}}
+        />
+      </svg>
+    </FontAwesomeIcon>
+  </div>
+</Memo(RolesRoleTag)>
+`;
+
+exports[`<RolesRoleTag /> render success for usually user 1`] = `
+<Memo(RolesRoleTag)
+  handleDelete={[MockFunction]}
+  user={
+    Object {
+      "accesses": Array [
+        Object {
+          "access": 1,
+          "createdAt": "2020-06-25T07:00:07.260Z",
+          "id": 72,
+          "updatedAt": "2020-06-25T07:00:07.260Z",
+          "userNumber": 81251,
+        },
+        Object {
+          "access": 999,
+          "createdAt": "2020-06-25T07:00:19.464Z",
+          "id": 73,
+          "updatedAt": "2020-06-25T07:00:19.464Z",
+          "userNumber": 81251,
+        },
+      ],
+      "computer": "",
+      "createdAt": "2020-07-08T04:17:31.062Z",
+      "department": Object {
+        "createdAt": "2020-07-08T04:09:26.067Z",
+        "id": 2150,
+        "name": "Лаборатория информационных технологий (ИТ)",
+        "parent": 2120,
+        "updatedAt": "2020-07-08T04:09:26.067Z",
+      },
+      "departmentId": 2150,
+      "dob": "1994-05-27",
+      "email": "vds81251@c31.nccp.ru",
+      "exmail": "",
+      "fired": 0,
+      "login": null,
+      "name1": "Веревин",
+      "name2": "Денис",
+      "name3": "Сергеевич",
+      "number": 81251,
+      "phone1": "11-61",
+      "phone2": "",
+      "photo": "http://www.c31.nccp.ru/img/foto/81251.jpg",
+      "position": Object {
+        "createdAt": "2020-05-21T13:32:46.669Z",
+        "id": 41675,
+        "level": 1,
+        "name": "Инженер-программист ",
+        "parent": null,
+        "responsibles": Array [
+          Object {
+            "categoryId": null,
+            "departmentId": null,
+            "isArchive": null,
+            "optionId": null,
+            "positionId": 41675,
+            "propertyId": 32,
+            "userNumber": null,
+          },
+          Object {
+            "categoryId": null,
+            "departmentId": null,
+            "isArchive": null,
+            "optionId": null,
+            "positionId": 41675,
+            "propertyId": 33,
+            "userNumber": null,
+          },
+        ],
+        "updatedAt": "2020-07-15T04:59:08.365Z",
+      },
+      "positionId": 41675,
+      "sex": 1,
+      "updatedAt": "2020-07-08T04:17:31.062Z",
+    }
+  }
+>
+  <div
+    className="tag"
+    key="81251"
+  >
+    <span
+      className="tag__text"
+    >
+      Веревин
+       
+      Д.
+       
+      С.
+    </span>
+  </div>
+</Memo(RolesRoleTag)>
+`;
