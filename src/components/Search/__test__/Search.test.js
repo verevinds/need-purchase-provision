@@ -9,11 +9,6 @@ Enzyme.configure({ adapter: new Adapter() });
 import Search from '../Search';
 
 describe('<Search />', () => {
-  // {
-  //   placeholder?: string;
-  //   width?: string | number;
-  // }
-
   const initialProps = { placeholder: 'номера потребностей', width: 100 };
   const jsxComponent = <Search placeholder={initialProps.placeholder} />;
   const wrapper = shallow(jsxComponent);
