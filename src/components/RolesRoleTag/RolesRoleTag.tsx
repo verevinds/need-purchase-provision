@@ -20,7 +20,7 @@ const RolesRoleTag: React.FC<IRolesRoleTag> = ({ handleDelete, user }) => {
       <span className='tag__text'>
         {`${user.name1}`} {`${user.name2.charAt(0)}.`} {`${user.name3.charAt(0)}.`}
       </span>
-      {isModerator && user.number !== 81215 ? (
+      {isModerator ? (
         <FontAwesomeIcon
           icon={faTimes}
           className='tag__close'
