@@ -1,0 +1,166 @@
+[
+  {
+    "number": 81251,
+    "positionId": 41675,
+    "departmentId": 2150,
+    "fired": 0,
+    "sex": 1,
+    "name1": "Веревин",
+    "name2": "Денис",
+    "name3": "Сергеевич",
+    "phone1": "11-61",
+    "phone2": "",
+    "email": "vds81251@c31.nccp.ru",
+    "exmail": "",
+    "computer": "",
+    "login": null,
+    "dob": "1994-05-27",
+    "photo": "http://www.c31.nccp.ru/img/foto/81251.jpg",
+    "createdAt": "2020-07-08T04:17:31.062Z",
+    "updatedAt": "2020-07-08T04:17:31.062Z",
+    "department": {
+      "id": 2150,
+      "name": "Лаборатория информационных технологий (ИТ)",
+      "parent": 2120,
+      "createdAt": "2020-07-08T04:09:26.067Z",
+      "updatedAt": "2020-07-08T04:09:26.067Z"
+    },
+    "position": {
+      "id": 41675,
+      "name": "Инженер-программист ",
+      "parent": null,
+      "level": 1,
+      "createdAt": "2020-05-21T13:32:46.669Z",
+      "updatedAt": "2020-07-15T04:59:08.365Z",
+      "responsibles": [
+        {
+          "categoryId": null,
+          "departmentId": null,
+          "isArchive": null,
+          "optionId": null,
+          "positionId": 41675,
+          "propertyId": 32,
+          "userNumber": null
+        },
+        {
+          "categoryId": null,
+          "departmentId": null,
+          "isArchive": null,
+          "optionId": null,
+          "positionId": 41675,
+          "propertyId": 33,
+          "userNumber": null
+        }
+      ]
+    },
+    "accesses": [
+      {
+        "id": 72,
+        "userNumber": 81251,
+        "access": 1,
+        "createdAt": "2020-06-25T07:00:07.260Z",
+        "updatedAt": "2020-06-25T07:00:07.260Z"
+      },
+      {
+        "id": 73,
+        "userNumber": 81251,
+        "access": 999,
+        "createdAt": "2020-06-25T07:00:19.464Z",
+        "updatedAt": "2020-06-25T07:00:19.464Z"
+      }
+    ]
+  },
+  {
+    "number": 81104,
+    "positionId": 41675,
+    "departmentId": 2150,
+    "fired": 1,
+    "sex": 1,
+    "name1": "Минин",
+    "name2": "Илья",
+    "name3": "Михайлович",
+    "phone1": "",
+    "phone2": "",
+    "email": "mim81104@c31.nccp.ru",
+    "exmail": "",
+    "computer": "ENG-149",
+    "login": null,
+    "dob": "1986-06-16",
+    "photo": "http://www.c31.nccp.ru/img/foto/81104.jpg",
+    "createdAt": "2020-07-08T04:17:30.991Z",
+    "updatedAt": "2020-07-08T04:17:30.991Z",
+    "department": {
+      "id": 2150,
+      "name": "Лаборатория информационных технологий (ИТ)",
+      "parent": 2120,
+      "createdAt": "2020-07-08T04:09:26.067Z",
+      "updatedAt": "2020-07-08T04:09:26.067Z"
+    },
+    "position": {
+      "id": 41675,
+      "name": "Инженер-программист ",
+      "parent": null,
+      "level": 1,
+      "createdAt": "2020-05-21T13:32:46.669Z",
+      "updatedAt": "2020-07-15T04:59:08.365Z",
+      "responsibles": [
+        {
+          "categoryId": null,
+          "departmentId": null,
+          "isArchive": null,
+          "optionId": null,
+          "positionId": 41675,
+          "propertyId": 32,
+          "userNumber": null
+        },
+        {
+          "categoryId": null,
+          "departmentId": null,
+          "isArchive": null,
+          "optionId": null,
+          "positionId": 41675,
+          "propertyId": 33,
+          "userNumber": null
+        }
+      ]
+    },
+    "accesses": []
+  },
+  {
+    "number": 4340,
+    "positionId": 41679,
+    "departmentId": 2122,
+    "fired": 0,
+    "sex": 2,
+    "name1": "Грибова",
+    "name2": "Олеся",
+    "name3": "Алексеевна",
+    "phone1": "11-63",
+    "phone2": "",
+    "email": "goa@c31.nccp.ru",
+    "exmail": "",
+    "computer": "ENG-275",
+    "login": null,
+    "dob": "1981-05-04",
+    "photo": "http://www.c31.nccp.ru/img/foto/04340.jpg",
+    "createdAt": "2020-07-08T04:17:30.797Z",
+    "updatedAt": "2020-07-08T04:17:30.797Z",
+    "department": {
+      "id": 2122,
+      "name": "Группа изготовления средств управления оборудованием (ИСУО)",
+      "parent": 2120,
+      "createdAt": "2020-07-08T04:09:26.061Z",
+      "updatedAt": "2020-07-08T04:09:26.061Z"
+    },
+    "position": {
+      "id": 41679,
+      "name": "Техник 2 категория",
+      "parent": null,
+      "level": 0,
+      "createdAt": "2020-05-21T13:32:46.669Z",
+      "updatedAt": "2020-05-21T13:32:46.669Z",
+      "responsibles": []
+    },
+    "accesses": []
+  }
+]
