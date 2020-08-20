@@ -22,14 +22,14 @@ const NeedsTableBodyItem: React.FC<INeedsTableBodyItem> = ({ need }) => {
   const dateCreate = React.useMemo(() => moment(need.datecreate * 1000).format('DD.MM.YYYY'), [
     need.datecreate,
   ]);
-  const comment = React.useMemo(() => needLogs.find((log: TNeedLogs) => log.type === 11), [
-    needLogs,
-  ]);
+  // const comment = React.useMemo(() => needLogs.find((log: TNeedLogs) => log.type === 11), [
+  //   needLogs,
+  // ]);
 
-  const commentUser = React.useMemo(
-    () => users?.find((user: TUser) => user.number === comment?.user),
-    [comment, users],
-  );
+  // const commentUser = React.useMemo(
+  //   () => users?.find((user: TUser) => user.number === comment?.user),
+  //   [comment, users],
+  // );
 
   return (
     <Fade bottom>
@@ -66,14 +66,12 @@ const NeedsTableBodyItem: React.FC<INeedsTableBodyItem> = ({ need }) => {
         <td data-label='Комментарий'>
           <div className=' body__comment'>
             <div className='body__comment__img'>
-              {commentUser ? (
-                <img
-                  src={`${commentUser?.photo}`}
-                  alt={`${commentUser?.name1} ${commentUser?.name2} ${commentUser?.name3}`}
-                />
-              ) : undefined}
+              <img
+                src={`http://www.c31.nccp.ru/img/foto/15959.jpg`}
+                alt={`http://www.c31.nccp.ru/img/foto/15959.jpg`}
+              />
             </div>
-            <span className='body__comment__text'>{comment?.value}</span>
+            <span className='body__comment__text'>{'comment?.value'}</span>
           </div>
         </td>
         <td data-label='Выполнено'>
