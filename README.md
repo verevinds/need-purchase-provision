@@ -75,3 +75,9 @@ ______
 ______
 ## Договора
 * [Показать договора](restapi-docs/libs-numbers-one/get.md) : `GET /api/libsNumbersOne/`
+* [Создать договор](restapi-docs/libs-numbers-one/post.md) : `POST /api/libsNumbersOne/`
+
+______
+## Заказы
+* [Показать заказы](restapi-docs/libs-numbers-two/get.md) : `GET /api/libsNumbersTwo/`
+* [Создать заказ](restapi-docs/libs-numbers-two/post.md) : `POST /api/libsNumbersTwo/`
