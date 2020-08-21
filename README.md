@@ -92,3 +92,6 @@ ______
 * [Показать роли](restapi-docs/roles/get.md) : `GET /roles/`
 * [Создать роль](restapi-docs/roles/post.md) : `POST /roles/`
 * [Удалить роль](restapi-docs/roles/delete.md) : `DELETE /roles/:number`
+
+______
+## Роли пользователей
