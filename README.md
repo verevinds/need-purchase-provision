@@ -72,7 +72,7 @@ npm run test
 * [Создать потребность](restapi-docs/needs/post.md) : `POST /needs/`
 
 ### Лог потребности
-* [Показать лог потребности](restapi-docs/needs-logs/get.md) : `GET /needsLogs/`
+* [Показать лог потребности](restapi-docs/needs-logs/get.md) : `GET /needs/logs/`
 
 ### Владельцы потребности
 * [Показать владельцев потребности](restapi-docs/needs-owners/get.md) : `GET /needsOwners/`
@@ -80,12 +80,12 @@ npm run test
 ______
 ## Договора
 * [Показать договора](restapi-docs/libs-numbers-one/get.md) : `GET /libsNumbersOne/`
-* [Создать договор](restapi-docs/libs-numbers-one/post.md) : `POST /libsNumbersOne/`
+* [Создать договор](restapi-docs/libs-numbers-one/post.md)  : `POST /libsNumbersOne/`
 
 ______
 ## Заказы
 * [Показать заказы](restapi-docs/libs-numbers-two/get.md) : `GET /libsNumbersTwo/`
-* [Создать заказ](restapi-docs/libs-numbers-two/post.md) : `POST /libsNumbersTwo/`
+* [Создать заказ](restapi-docs/libs-numbers-two/post.md)  : `POST /libsNumbersTwo/`
  
 ______
 ## Роли пользователей
