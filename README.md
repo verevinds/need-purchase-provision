@@ -75,7 +75,7 @@ npm run test
 * [Показать лог потребности](restapi-docs/needs-logs/get.md) : `GET /needs/logs/`
 
 ### Владельцы потребности
-* [Показать владельцев потребности](restapi-docs/needs-owners/get.md) : `GET /needsOwners/`
+* [Показать владельцев потребности](restapi-docs/needs-owners/get.md) : `GET /needs/owners/`
 
 ______
 ## Договора
