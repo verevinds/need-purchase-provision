@@ -23,32 +23,100 @@
 ```json
 [
     {
-        "id": 4288,
-        "user": 81007,
-        "number1": 1,
-        "number2": 9,
-        "datecreate": 1597974855,
-        "dateneed": 1601398800,
-        "dateready": 1597975285,
+        "id": 4289,
+        "user": 81264,
+        "number1": 115,
+        "number2": 488,
+        "datecreate": 1597986524,
+        "dateneed": 1599152400,
+        "dateready": 1597987006,
+        "datesend": 0,
+        "draw": "07.001.0.11.00.000.000",
+        "import": "",
+        "createdAt": "2020-08-21T12:08:44.000Z",
+        "updatedAt": "2020-08-21T12:08:44.000Z",
+        "contracts": {
+            "id": 115,
+            "name": "311-3179-Д-099-20Д1",
+            "description": "Технологическое оборудование для установки сжигания горючих радиоактивных отходов от 13.03.2020",
+            "visible": 1,
+            "type": 0
+        },
+        "orders": {
+            "id": 488,
+            "parent": 115,
+            "name": "4396",
+            "title": "Оборудование для установки сжигания горючих радиоактивных отходов                    ",
+            "description": ""
+        },
+        "positions": [
+            {
+                "id": 33341,
+                "parent": 0,
+                "measure": 24,
+                "need": 4289,
+                "count": 30,
+                "cost": 0,
+                "code": "",
+                "codeowner": 0,
+                "datestock": 0,
+                "dateowner": 0,
+                "dateorder": 0,
+                "datefinal": 0,
+                "claim": 0,
+                "owner": 0,
+                "document": "",
+                "cancel": 0
+            },
+            {
+                "id": 33342,
+                "parent": 0,
+                "measure": 24,
+                "need": 4289,
+                "count": 30,
+                "cost": 0,
+                "code": "",
+                "codeowner": 0,
+                "datestock": 0,
+                "dateowner": 0,
+                "dateorder": 0,
+                "datefinal": 0,
+                "claim": 0,
+                "owner": 0,
+                "document": "",
+                "cancel": 0
+            }
+        ]
+    },
+    ...
+    {
+        "id": 4290,
+        "user": 81246,
+        "number1": 77,
+        "number2": 391,
+        "datecreate": 1597994780,
+        "dateneed": 0,
+        "dateready": 0,
         "datesend": 0,
         "draw": "",
         "import": "",
-        "createdAt": "2020-08-21T08:54:15.000Z",
-        "updatedAt": "2020-08-21T08:54:15.000Z",
+        "createdAt": "2020-08-21T14:26:20.000Z",
+        "updatedAt": "2020-08-21T14:26:20.000Z",
         "contracts": {
-            "id": 1,
-            "name": "1999",
-            "description": "Внутреннее потребление",
-            "visible": 0,
+            "id": 77,
+            "name": "ГПЗ 2020 Основная",
+            "description": "Годовая потребность закупок",
+            "visible": 3,
             "type": 1
         },
         "orders": {
-            "id": 9,
-            "parent": 1,
-            "name": "2011",
-            "title": "Спецодежда",
-            "description": ""
-        }
+            "id": 391,
+            "parent": 77,
+            "name": "2007",
+            "title": "Инструмент",
+            "description": "дрели, отвёртки, снегоуборщики"
+        },
+        "positions": []
     }
 ]
 ```
