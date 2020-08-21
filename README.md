@@ -64,3 +64,5 @@ http://192.168.213.51:8080
 ## Потребности
 * [Показать потребности](restapi-docs/needs/get.md) : `GET /api/needs/`
 * [Создать потребность](restapi-docs/needs/post.md) : `POST /api/needs/`
+### Лог потребности
+* [Показать лог потребности](restapi-docs/needs-logs/get.md) : `GET /api/needsLogs/`
