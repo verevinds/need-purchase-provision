@@ -54,3 +54,18 @@ npm run test
 ```
 
 Запускается Jest в режими "Слушатель". Он пробегается по всем тестам проекта, в описание файла которых есть .test. . На каждое изменение файла, проверка теста проходит вновь.
+
+
+# RESTApi
+## Базовый URL
+```
+http://192.168.213.51:8080/api
+```
+## Потребности
+
+|URL| Методы | Тип параметра | Параметр | Вернёт | Ошибки |
+|---|--------|---------------|----------|--------|--------|
+|/needs|GET|query|limit: number, offset: number, userNumber: number|[{ id, user, number1, number2, datecreate, dateneed, dateready, datesend, draw, import, createAt, updateAt, contracts:{ id, name, description, visible, type }, orders:{ id, parent, name, title, description } }]|500: Произошла ошибка при получении Needs|
+|/needs|POST|body|{user, role}|{user, role}|500: Произошла ошибка при создании Needs.|
+|/needsLogs|GET|query|need|[{ need, type, value, user, timestamp }] | * 400: Вы не указали номер потребности!  * 404: Информация по потребности №${need} не найдена!  * 500: Произошла ошибка на сервере! Обратитесь к администратору.|
+|/needsLogs|POST|body|{ need, type, value, user, timestamp }|{ need, type, value, user, timestamp }|500: Произошла ошибка при создании NeedsLogs.|
