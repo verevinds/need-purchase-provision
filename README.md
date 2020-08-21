@@ -64,25 +64,31 @@ npm run test
 
 
 # :key: RESTApi
-**Базовый URL** : `http://192.168.213.51:8080`
+**Базовый URL** : `http://192.168.213.51:8080/api`
 
-______
+
 ## Потребности
-* [Показать потребности](restapi-docs/needs/get.md) : `GET /api/needs/`
-* [Создать потребность](restapi-docs/needs/post.md) : `POST /api/needs/`
+* [Показать потребности](restapi-docs/needs/get.md) : `GET /needs/`
+* [Создать потребность](restapi-docs/needs/post.md) : `POST /needs/`
 
 ### Лог потребности
-* [Показать лог потребности](restapi-docs/needs-logs/get.md) : `GET /api/needsLogs/`
+* [Показать лог потребности](restapi-docs/needs-logs/get.md) : `GET /needsLogs/`
 
 ### Владельцы потребности
-* [Показать владельцев потребности](restapi-docs/needs-owners/get.md) : `GET /api/needsOwners/`
+* [Показать владельцев потребности](restapi-docs/needs-owners/get.md) : `GET /needsOwners/`
 
 ______
 ## Договора
-* [Показать договора](restapi-docs/libs-numbers-one/get.md) : `GET /api/libsNumbersOne/`
-* [Создать договор](restapi-docs/libs-numbers-one/post.md) : `POST /api/libsNumbersOne/`
+* [Показать договора](restapi-docs/libs-numbers-one/get.md) : `GET /libsNumbersOne/`
+* [Создать договор](restapi-docs/libs-numbers-one/post.md) : `POST /libsNumbersOne/`
 
 ______
 ## Заказы
-* [Показать заказы](restapi-docs/libs-numbers-two/get.md) : `GET /api/libsNumbersTwo/`
-* [Создать заказ](restapi-docs/libs-numbers-two/post.md) : `POST /api/libsNumbersTwo/`
+* [Показать заказы](restapi-docs/libs-numbers-two/get.md) : `GET /libsNumbersTwo/`
+* [Создать заказ](restapi-docs/libs-numbers-two/post.md) : `POST /libsNumbersTwo/`
+ 
+______
+## Роли пользователей
+* [Показать роли](restapi-docs/roles/get.md) : `GET /roles/`
+* [Создать роль](restapi-docs/roles/post.md) : `POST /roles/`
+* [Удалить роль](restapi-docs/roles/delete.md) : `DELETE /roles/:number`
