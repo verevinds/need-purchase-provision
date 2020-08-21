@@ -1,0 +1,40 @@
+.body__history {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -10px;
+}
+.history__point {
+  display: flex;
+  align-items: center;
+  width: 225px;
+  height: 57px;
+  clear: none;
+}
+._comment {
+  width: 100%;
+  height: 57px;
+  margin: 5px 0px;
+  background: #f3f3f3;
+  border: 1px solid #d8d8d8;
+}
+.history__timestamp {
+  font-size: 11px;
+  line-height: 12px;
+  color: #36638e;
+}
+.history__avatar {
+  margin: 5px;
+  background-color: #e2e1df;
+  background-size: cover;
+  background-image: url(/src/avatar.img);
+  cursor: pointer;
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  object-position: top;
+}
+.history__text {
+  font-size: 11px;
+  color: #b3afaf;
+  line-height: 17px;
+}

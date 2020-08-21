@@ -1,0 +1,56 @@
+.user_out{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+}
+._user-body-width{
+  width: 580px;
+  display: flex;
+}
+
+.avatar {
+  width: 200px;
+  height: 250px;
+  margin: -5px 20px 5px 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  background: #e2e1df center top / cover no-repeat;
+  background-image: url(/src/avatar.img);
+}
+.info {
+  width: 365px;
+}
+.info > h1 {
+  margin: 2px 0px 0px;
+  font-size: 12px;
+  color: #45688e;
+}
+.info > h2 {
+  border-bottom: 1px solid #dae1e8;
+  height: 20px;
+  font-weight: normal;
+  font-size: 11px;
+  color: #777777;
+  margin: 5px 0px 10px;
+}
+
+.info__point {
+  clear: both;
+  height: 20px;
+  line-height: 20px;
+  margin-bottom: 3px;
+  font-size: 8pt;
+}
+.point__label {
+  float: left;
+  color: #777777;
+  width: 135px;
+  margin-left: 2px;
+}
+.point__span {
+  color: #000000;
+  max-width: 220px;
+  padding: 0 0 0 6px;
+}

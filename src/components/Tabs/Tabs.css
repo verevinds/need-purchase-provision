@@ -1,0 +1,18 @@
+.header__tabs {
+  display: flex;
+  top: 0px;
+  left: 0px;
+  height: 35px;
+  color: #717171;
+  cursor: pointer;
+}
+.tabs__tab-active {
+  color: #000000;
+  background: #f9f9f9;
+  cursor: default;
+  padding: 10px 15px;
+}
+.tabs__tab {
+  padding: 0px 15px 0px;
+  padding: 10px 15px;
+}
