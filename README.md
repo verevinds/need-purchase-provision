@@ -59,13 +59,8 @@ npm run test
 # RESTApi
 ## Базовый URL
 ```
-http://192.168.213.51:8080/api
+http://192.168.213.51:8080
 ```
 ## Потребности
-
-|URL| Методы | Тип параметра | Параметр | Вернёт | Ошибки |
-|---|--------|---------------|----------|--------|--------|
-|/needs|GET|query|limit: number, offset: number, userNumber: number|[{ id, user, number1, number2, datecreate, dateneed, dateready, datesend, draw, import, createAt, updateAt, contracts:{ id, name, description, visible, type }, orders:{ id, parent, name, title, description } }]|500: Произошла ошибка при получении Needs|
-|/needs|POST|body|{user, role}|{user, role}|500: Произошла ошибка при создании Needs.|
-|/needsLogs|GET|query|need|[{ need, type, value, user, timestamp }] | * 400: Вы не указали номер потребности!  * 404: Информация по потребности №${need} не найдена!  * 500: Произошла ошибка на сервере! Обратитесь к администратору.|
-|/needsLogs|POST|body|{ need, type, value, user, timestamp }|{ need, type, value, user, timestamp }|500: Произошла ошибка при создании NeedsLogs.|
+* [Показать потребности](restapi-doc/needs/get.md) : `GET /api/needs/`
+* [Создать потребность](restapi-doc/needs/post.md) : `POST /api/needs/`
