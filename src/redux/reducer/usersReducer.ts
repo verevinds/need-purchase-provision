@@ -11,30 +11,24 @@ export interface IUsers {
   isUpdate: boolean;
 }
 export type TUser = {
-  accesses: any[];
-  computer: string;
-  createdAt: string;
-  departmentId: number;
-  dob: string;
-  email: string;
-  exmail: string;
+  number: number;
+  team: number;
   fired: number;
-  login: string | null;
+  sex: number;
   name1: string;
   name2: string;
   name3: string;
-  number: number;
   phone1: string;
   phone2: string;
-  photo: string;
-  positionId: number;
-  sex: number;
-  updatedAt: string;
+  email: string;
+  exmail: string;
+  computer: string;
+  login: string;
+  dob: string;
   department: {
     id: number;
+    parent: number;
     name: string;
-    createdAt: string;
-    updatedAt: string;
   };
   position: TPosition;
 };
