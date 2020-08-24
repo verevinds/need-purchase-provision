@@ -23,97 +23,95 @@
 ```json
 [
     {
-        "id": 4289,
-        "user": 81264,
-        "number1": 115,
-        "number2": 488,
-        "datecreate": 1597986524,
-        "dateneed": 1599152400,
-        "dateready": 1597987006,
-        "datesend": 1598000301,
-        "draw": "07.001.0.11.00.000.000",
+        "id": 4124,
+        "user": 23,
+        "number1": 1,
+        "number2": 5,
+        "datecreate": 1594279595,
+        "dateneed": 1595610000,
+        "dateready": 1594280210,
+        "datesend": 1594344573,
+        "draw": "",
         "import": "",
-        "createdAt": "2020-08-21T12:08:44.000Z",
-        "updatedAt": "2020-08-21T12:08:44.000Z",
+        "createdAt": "2020-07-28T11:26:03.000Z",
+        "updatedAt": "2020-07-28T11:26:03.000Z",
         "contracts": {
-            "id": 115,
-            "name": "311-3179-Д-099-20Д1",
-            "description": "Технологическое оборудование для установки сжигания горючих радиоактивных отходов от 13.03.2020",
-            "visible": 1,
-            "type": 0
+            "id": 1,
+            "name": "1999",
+            "description": "Внутреннее потребление",
+            "visible": 0,
+            "type": 1
         },
         "orders": {
-            "id": 488,
-            "parent": 115,
-            "name": "4396",
-            "title": "Оборудование для установки сжигания горючих радиоактивных отходов                    ",
-            "description": ""
+            "id": 5,
+            "parent": 1,
+            "name": "2007",
+            "title": "Инструмент",
+            "description": "дрели, отвёртки, снегоуборщики"
         },
         "positions": [
             {
-                "id": 33341,
+                "id": 32125,
                 "parent": 0,
-                "item": 20359,
+                "item": 718,
                 "measure": 24,
-                "need": 4289,
-                "count": 30,
+                "need": 4124,
+                "count": 10,
                 "cost": 0,
                 "code": "",
                 "codeowner": 0,
-                "datestock": 1598000301,
-                "dateowner": 0,
-                "dateorder": 0,
+                "datestock": 1594344573,
+                "dateowner": 1595126766,
+                "dateorder": 1595238984,
                 "datefinal": 0,
-                "claim": 0,
-                "owner": 0,
+                "claim": 3595,
+                "owner": 81205,
                 "document": "",
                 "cancel": 0,
                 "unit": {
-                    "id": 20359,
-                    "name": "Гайка шестигранная нормальная М18-21 ГОСТ ISO 4032",
-                    "number": "",
-                    "producer": "",
+                    "id": 718,
+                    "name": "Резец KORLOY",
+                    "number": "MBCR 0610-1  Сплав PC30M",
+                    "producer": "Korloy",
                     "gost": "",
                     "measure": 24,
                     "suodID": "",
-                    "foxproID": "p22417"
+                    "foxproID": ""
                 },
                 "byMeasure": {
                     "name": "штука",
                     "title": "шт"
-                }
-            },
-            {
-                "id": 33342,
-                "parent": 0,
-                "item": 20361,
-                "measure": 24,
-                "need": 4289,
-                "count": 30,
-                "cost": 0,
-                "code": "",
-                "codeowner": 0,
-                "datestock": 1598000301,
-                "dateowner": 0,
-                "dateorder": 0,
-                "datefinal": 0,
-                "claim": 0,
-                "owner": 0,
-                "document": "",
-                "cancel": 0,
-                "unit": {
-                    "id": 20361,
-                    "name": "Шайба А18 12Х18Н10Т ГОСТ 11371-78",
-                    "number": "",
-                    "producer": "",
-                    "gost": "",
-                    "measure": 24,
-                    "suodID": "",
-                    "foxproID": "p22419"
                 },
-                "byMeasure": {
-                    "name": "штука",
-                    "title": "шт"
+                "byClaim": {
+                    "id": 3595,
+                    "user": 81205,
+                    "created_date": 1579053402,
+                    "changed_date": 1595238984,
+                    "expected_date": 0,
+                    "protocol": "",
+                    "protocol_date": 0,
+                    "contract": "",
+                    "contract_date": 0,
+                    "contract_end": 0,
+                    "contract_notice": 0,
+                    "cost": "",
+                    "cost_date1": 0,
+                    "cost_date2": 0,
+                    "comment": "KORLOY + HOFFMAN ГПЗ  (Инструмент)",
+                    "progress1": 0,
+                    "progress2": 0,
+                    "progress3": 0,
+                    "progress4": 0,
+                    "progress5": 0,
+                    "progress6": 0,
+                    "progress7": 0,
+                    "progress8": 0,
+                    "progress9": 0,
+                    "progress10": 0,
+                    "progress11": 0,
+                    "progress12": 0,
+                    "progress13": 0,
+                    "progress14": 0
                 }
             }
         ]
@@ -146,7 +144,8 @@
             "title": "Инструмент",
             "description": "дрели, отвёртки, снегоуборщики"
         },
-        "positions": []
+        "positions": [],
+        "byClaim": null
     }
 ]
 ```
