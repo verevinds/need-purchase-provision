@@ -31,6 +31,7 @@ const App = () => {
     auth: { user },
     needs: { isUpdate: isUpdateNeeds },
   }: IState = useSelector((state: IState) => state);
+
   const showMe = useSelector((state: IState) => state.filter.needs.showMe);
   const rolesSelect = React.useMemo(() => {
     const filterRolesByUser = roles?.filter((role: TRole) => role.user === user?.number);
@@ -71,11 +72,12 @@ const App = () => {
       .then((res) => {
         if (res.data) {
           cookies.set('login', res.data, { path: '/' });
-
-          Axios.get(`http://srv-sdesk.c31.nccp.ru:8080/api/users/${res.data.number}`).then(
-            (resp: any) => {
-              dispatch(authRequestSuccessed(resp.data));
-            },
+          dispatch(
+            queryApi({
+              route: 'users',
+              actionSuccessed: authRequestSuccessed,
+              id: res.data.number,
+            }),
           );
         }
       })
@@ -93,8 +95,9 @@ const App = () => {
       }),
     );
 
-    Axios.get(`http://srv-sdesk.c31.nccp.ru:8080/api/users/`).then((resp: any) => {
-      dispatch(usersRequestSeccessed(resp.data));
+    queryApi({
+      route: 'users',
+      actionSuccessed: usersRequestSeccessed,
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

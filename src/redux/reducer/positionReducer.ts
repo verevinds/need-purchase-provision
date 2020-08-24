@@ -8,11 +8,7 @@ const initialState = {
 
 export type TPosition = {
   id: number;
-  level: number;
-  parent: number | null;
   name: string;
-  updatedAt: string;
-  createdAt: string;
 };
 
 const positionReducer = (state = initialState, action) => {

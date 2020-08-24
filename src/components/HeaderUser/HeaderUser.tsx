@@ -13,9 +13,8 @@ const HeaderUser: React.FC<IHeaderUser> = () => {
       <div
         className='header__user__img'
         style={{
-          backgroundImage: `url('${user?.photo}')`,
-        }}
-      ></div>
+          backgroundImage: `url('http://www.c31.nccp.ru/img/foto/${user?.number}.jpg')`,
+        }}></div>
       <div className='header__user__name'>Веревин Денис Сергеевич</div>
     </div>
   );
