@@ -13,6 +13,7 @@ const isProd = !isDev;
 
 const optimization = () => {
   const config = {
+    runtimeChunk: true,
     splitChunks: {
       chunks: 'all',
     },
@@ -23,7 +24,7 @@ const optimization = () => {
   return config;
 };
 
-const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`);
+const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[chunkhash].${ext}`);
 
 const cssLoaders = (extra) => {
   const loader = [
