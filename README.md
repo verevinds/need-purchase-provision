@@ -94,4 +94,6 @@ ______
 * [Удалить роль](restapi-docs/roles/delete.md) : `DELETE /roles/:number`
 
 ______
-## Позиции
+## Пользователи
+* [Показать пользователей](restapi-docs/users/get.md) : `GET /users/`
+* [Показать пользователя](restapi-docs/users/get.md) : `GET /users/:number`
