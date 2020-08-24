@@ -51,6 +51,39 @@
         },
         "positions": [
             {
+                "id": 33341,
+                "parent": 0,
+                "item": 20359,
+                "measure": 24,
+                "need": 4289,
+                "count": 30,
+                "cost": 0,
+                "code": "",
+                "codeowner": 0,
+                "datestock": 1598000301,
+                "dateowner": 0,
+                "dateorder": 0,
+                "datefinal": 0,
+                "claim": 0,
+                "owner": 0,
+                "document": "",
+                "cancel": 0,
+                "unit": {
+                    "id": 20359,
+                    "name": "Гайка шестигранная нормальная М18-21 ГОСТ ISO 4032",
+                    "number": "",
+                    "producer": "",
+                    "gost": "",
+                    "measure": 24,
+                    "suodID": "",
+                    "foxproID": "p22417"
+                },
+                "byMeasure": {
+                    "name": "штука",
+                    "title": "шт"
+                }
+            },
+            {
                 "id": 33342,
                 "parent": 0,
                 "item": 20361,
@@ -77,8 +110,14 @@
                     "measure": 24,
                     "suodID": "",
                     "foxproID": "p22419"
+                },
+                "byMeasure": {
+                    "name": "штука",
+                    "title": "шт"
                 }
-            },
+            }
+        ]
+    },
     ...
     {
         "id": 4290,
@@ -108,7 +147,7 @@
             "description": "дрели, отвёртки, снегоуборщики"
         },
         "positions": []
-    },
+    }
 ]
 ```
 
